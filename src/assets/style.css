@@ -1,0 +1,198 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #EDF1F6;
+    color: #222831;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    padding: 10px;
+    /* Pas d'affichage flex direct sur le body, sinon tout sera aligné en ligne
+     * On le laisse en bloc normal. */
+}
+
+/* Titre principal centré */
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #266DF1;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/* #formglobal = ligne 1 : Subject + Country */
+#formglobal {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    /* centré, margin bottom 20px */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+#formglobal label {
+    margin-right: 10px;
+}
+
+#formglobal input[type="text"],
+#formglobal select {
+    flex: 1;
+    min-width: 120px;
+    padding: 8px;
+    margin: 5px 0 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* #main-container = ligne 2 : 2 colonnes (corps + create-button) */
+#main-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+    /* centrage horizontal + espace en bas */
+    gap: 20px;
+    /* espace entre colonnes */
+    align-items: flex-start;
+    /* haut aligné */
+}
+
+/* #corps = la zone de formulaires, prend la place (flex:1) */
+#corps {
+    flex: 1;
+    min-height: 70vh;
+    /* ou 68vh comme vous voulez */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #EDF1F5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    /* si besoin */
+}
+
+/* #create-button = colonne de droite pour les boutons Add X */
+#create-button {
+    width: 200px;
+    /* ou 20% */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+/* #button-container = ligne 3 (Generate + Reset) */
+#button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Form styling (title, banner, cta, product, etc.) */
+.form-title,
+.form-banner,
+.form-cta,
+.form-product {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.365);
+    margin-bottom: 15px;
+}
+
+/* Input fields */
+input[type="text"],
+select {
+    width: 80%;
+    padding: 8px;
+    margin: 5px 0 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px 5px;
+    border: none;
+    background-color: #276CF1;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Boutons ajout dynamiques */
+button[type="button"] {
+    background-color: #5829f4e8;
+}
+
+button[type="button"]:hover {
+    background-color: #5929F4;
+}
+
+/* Petits ajustements .product-group .form-product etc. */
+.product-group {
+    display: block;
+    /* ou flex, selon besoin */
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* un exemple */
+.form-product {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* par ex .product-line => style */
+.product-line {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Bouton X pour supprimer */
+.delete-btn {
+    background-color: #C0392B;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+    border: none;
+    margin: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #A93226;
+}
