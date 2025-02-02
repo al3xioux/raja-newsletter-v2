@@ -255,10 +255,10 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 																  <td style="font-size:0;"><a
 																		  href="${item.data.productLink1 || "#"}"
 																		  target="_blank"><img class="resize"
-																			  src="${item.data.image1 || ""}"
+																			  src="https://raja.scene7.com/is/image/Raja?template=TA-picture-150&$image=${item.data.image1 || ""}&hei=368&wid=492&resMode=sharp4"
 																			  width="297" height="222"
 																			  style="display:block; padding:0; margin:0; border:0; width:297px; height:222px;"
-																			  alt="" /></a>
+																			  alt="${item.data.title1 || ""}" /></a>
 																  </td>
 															  </tr>
 														  </table>
@@ -383,10 +383,10 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 													  <td style="font-size:0;"><a
 															  href="${item.data.productLink2 || "#"}"
 															  target="_blank"><img class="resize"
-																  src="${item.data.image2 || ""}"
+																  src="https://raja.scene7.com/is/image/Raja?template=TA-picture-150&$image=${item.data.image2 || ""}&hei=368&wid=492&resMode=sharp4"
 																  width="297" height="222"
 																  style="display:block; padding:0; margin:0; border:0; width:297px; height:222px;"
-																  alt="" /></a>
+																  alt="${item.data.title2 || ""}" /></a>
 													  </td>
 												  </tr>
 											  </table>
