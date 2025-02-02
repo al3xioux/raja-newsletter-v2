@@ -101,7 +101,8 @@ h1 {
 .form-title,
 .form-banner,
 .form-cta,
-.form-product {
+.form-product,
+.form-legal-notice {
     background: #fff;
     padding: 15px;
     border-radius: 8px;
@@ -165,7 +166,6 @@ button[type="button"]:hover {
 /* un exemple */
 .form-product {
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
 }

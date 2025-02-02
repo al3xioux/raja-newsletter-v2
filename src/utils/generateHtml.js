@@ -152,7 +152,7 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 						  <td>
 							  <table class="resize" width="298" border="0" align="center" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF;">
 								  <tr>
-									  <td style="font-size:0;"><a href="${item.data.one_productLink || "#"}" target="_blank"><img class="resize_w90" src="${item.data.one_image || ""}" width="297" height="272" style="display:block; padding:0; margin:0 auto; border:0; width:297px; height:272px;" alt="Boîte ronde en carton RAJA"/></a></td>
+									  <td style="font-size:0;"><a href="${item.data.one_productLink || "#"} target="_blank"><img class="resize_w90" src="https://raja.scene7.com/is/image/Raja?template=TA-picture-150&$image=${item.data.one_image || ""}&hei=368&wid=492&resMode=sharp4" width="297" height="272" style="display:block; padding:0; margin:0 auto; border:0; width:297px; height:272px;" alt="${item.data.one_title || ""}"/></a></td>
 								  </tr>
 							  </table>
 						  </td>
@@ -172,7 +172,7 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 							  <table class="resize_w90" width="268" border="0" align="center" valign="top" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF;">
 								  <!--CRIT GREEN-->
 								  <tr>
-									  <td><a href="${item.data.one_productLink || "#"}" target="_blank"><img class="resize_h40" src="${item.data.one_ecolabel || ""}" height="30" width="197" alt="Recyclable" style="display:block; padding:0; margin:0; border:0; height:30px; width:197px;"></a></td>
+									  <td><a href="${item.data.one_productLink || "#"}" target="_blank"><img class="resize_h40" src="${item.data.one_ecolabel || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank.png"}" height="30" width="197" alt="Eco Label" style="display:block; padding:0; margin:0; border:0; height:30px; width:197px;"></a></td>
 								  </tr>
 								  <tr><td style="font-size:0; display:block; height:5px;">&nbsp;</td></tr>
 								  <!--END CRIT GREEN-->
@@ -187,15 +187,18 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 								  <tr><td style="font-size:0; display:block; height:20px;">&nbsp;</td></tr>
 								  <!--LABEL-->
 								  <tr>
-									  <td align="left" style="font-size:0; display:block;"><a href="${item.data.one_productLink || "#"}" target="_blank"><img class="resize" src="${item.data.one_label || ""}" height="26" width="268" alt="OFFRE SPÉCIALE" style="display:block; padding:0; margin:0; border:0; height:26px; width:268px;"></a></td>
+									  <td align="left" style="font-size:0; display:block;"><a href="${item.data.one_productLink || "#"}" target="_blank"><img class="resize" src="${item.data.one_label || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank.png"}" height="26" width="268" alt="Label" style="display:block; padding:0; margin:0; border:0; height:26px; width:268px;"></a></td>
 								  </tr>
 								  <!--END LABEL-->
 								  <tr><td style="font-size:0; display:block; height:10px;">&nbsp;</td></tr>
 								  <tr>
-									  <td align="left" style="font-size:14px; color:#FE9600;"><a class="resize_text16" href="${item.data.one_productLink || "#"}" target="_blank" style="color:#FE9600; text-decoration:none;">${item.data.one_from || ""}<br>
+									  <td align="left" style="font-size:14px; color:#FE9600;">
+									  	<a class="resize_text16" href="${item.data.one_productLink || "#"}" target="_blank" style="color:#FE9600; text-decoration:none;">${item.data.one_from || ""}<br>
+									  	<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">&nbsp;${item.data.one_fromPrice || ""}</span>&nbsp;
+									  	<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.one_crossedOutPrice ? `&nbsp;${item.data.one_crossedOutPrice}&nbsp;` : ""}</strike>
 										  <span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">&nbsp;${item.data.one_price || ""}</span>&nbsp;<br>
 										  ${item.data.one_unit || ""}
-					  </a>
+										</a>
 									  </td>
 								  </tr>
 							  </table>
@@ -255,7 +258,7 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 																			  src="${item.data.image1 || ""}"
 																			  width="297" height="222"
 																			  style="display:block; padding:0; margin:0; border:0; width:297px; height:222px;"
-																			  alt="Test Phase" /></a>
+																			  alt="" /></a>
 																  </td>
 															  </tr>
 														  </table>
@@ -270,9 +273,9 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 																  <td style="font-size:0; display:block;"><a
 																		  href="${item.data.productLink1 || "#"}"
 																		  target="_blank"><img class="resize_h40"
-																			  src="${item.data.ecolabel1 || ""}"
+																			  src="${item.data.ecolabel1 || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank.png"}"
 																			  height="30" width="197"
-																			  alt="Test Phase"
+																			  alt="Eco Label"
 																			  style="display:block; padding:0; margin:0; border:0; height:30px; width:197px;"
 																			  id="pdt-badge-1-test"></a>
 																  </td>
@@ -323,8 +326,8 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 																  <td align="left" style="font-size:0; display:block;"><a
 																		  href="${item.data.productLink1 || "#"}"
 																		  target="_blank"><img class="resize"
-																			  src="${item.data.label1 || ""}"
-																			  height="26" width="268" alt="Test Phase"
+																			  src="${item.data.label1 || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank.png"}"
+																			  height="26" width="268" alt="Label"
 																			  style="display:block; padding:0; margin:0; border:0; height:26px; width:268px;"></a>
 																  </td>
 															  </tr>
@@ -340,8 +343,10 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 																		  target="_blank"
 																		  style="font-size:14px; color:#FE9600; text-decoration:none;">
 																		  ${item.data.from1 || ""}<br>
+																			<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">&nbsp;${item.data.fromPrice1 || ""}</span>&nbsp;
+									  										<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice1 ? `&nbsp;${item.data.crossedOutPrice1}&nbsp;` : ""}</strike></span>&nbsp;
 																		  <span class="resize_text30"
-																			  style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price1 || ""}</span>&nbsp;<br>
+																			  style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price1 || ""}</span>&nbsp;
 																		  ${item.data.unit1 || ""}
 																	  </a>
 																  </td>
@@ -381,7 +386,7 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 																  src="${item.data.image2 || ""}"
 																  width="297" height="222"
 																  style="display:block; padding:0; margin:0; border:0; width:297px; height:222px;"
-																  alt="Test Phase" /></a>
+																  alt="" /></a>
 													  </td>
 												  </tr>
 											  </table>
@@ -395,8 +400,8 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 													  <td style="font-size:0; display:block;"><a
 															  href="${item.data.productLink2 || "#"}"
 															  target="_blank"><img class="resize_h40"
-																  src="${item.data.ecolabel2 || ""}"
-																  height="30" width="197" alt="Test Phase"
+																  src="${item.data.ecolabel2 || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank.png"}"
+																  height="30" width="197" alt="Eco Label"
 																  style="display:block; padding:0; margin:0; border:0; height:30px; width:197px;"
 																  id="pdt-badge-2-test"></a>
 													  </td>
@@ -442,8 +447,8 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 													  <td align="left" style="font-size:0; display:block;"><a
 															  href="${item.data.productLink2 || "#"}"
 															  target="_blank"><img class="resize"
-																  src="${item.data.label2 || ""}"
-																  height="26" width="268" alt="Test Phase"
+																  src="${item.data.label2 || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank.png"}"
+																  height="26" width="268" alt="Label"
 																  style="display:block; padding:0; margin:0; border:0; height:26px; width:268px;"></a>
 														  </td>
 													  </tr>
@@ -458,7 +463,9 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 																  target="_blank"
 																  style="font-size:14px; color:#FE9600; text-decoration:none;">
 																  ${item.data.from2 || ""}<br>
-																  <span class="resize_text30"
+																	<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">&nbsp;${item.data.fromPrice2 || ""}</span>&nbsp;
+									  										<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice2 ? `&nbsp;${item.data.crossedOutPrice2}&nbsp;` : ""}</strike></span>&nbsp;
+																	<span class="resize_text30"
 																	  style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price2 || ""}</span>&nbsp;<br>
 																  ${item.data.unit2 || ""}
 															  </a>
@@ -504,7 +511,7 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 							  <table class="resize_w90" align="center" width="540" border="0" cellspacing="0"
 								  cellpadding="0">
 								  <tr>
-									  <td align="center" style="font-size:22px; font-weight:800; color:#656F84;">
+									  <td align="center" style="font-size: ${item.data.textSize || "22px"}; font-weight:${item.data.bold || "800"}; color:${item.data.textColor || "#656F84"};">
 										  ${item.data.bigTitle || ""}
 									  </td>
 								  </tr>
@@ -528,23 +535,23 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 					  <tr>
 						  <td class="none" style="font-size:0; display:block; width:600px;">
 				<a href="${item.data.bannerLinkText || "#"}"
-				  target="_blank" title="Test Phase">
+				  target="_blank" title="${item.data.bannerAltTitle || ""}">
 				  <img src="${item.data.bannerImage || ""}"
 					width="600" height="180"
 					style="display:block; padding:0; margin:0; border:0; width:600px; height:180px;"
-					alt="Test Phase" />
+					alt="${item.data.bannerAltTitle || ""}" />
 				</a>
 			  </td>
 					  </tr>
 					  <tr>
 						  <td class="view" style="display:none; font-size:0;">
 				<a href="${item.data.bannerLinkText || "#"}"
-				  target="_blank" title="Test Phase">
+				  target="_blank" title="${item.data.bannerAltTitle || ""}">
 				  <img class="resize"
 					src="${item.data.bannerImage || ""}"
 					width="600" height="400"
 					style="display:block; padding:0; margin:0; border:0; width:600px; height:400px;"
-					alt="Test Phase" />
+					alt="${item.data.bannerAltTitle || ""}" />
 				</a>
 			  </td>
 					  </tr>
@@ -563,7 +570,7 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 				  <img src="${item.data.ctaImage || ""}"
 					width="600" height="120"
 					style="display:block; padding:0; margin:0; border:0; width:600px; height:120px;"
-					alt="Test Phase" />
+					alt="CTA" />
 				</a>
 			  </td>
 					  </tr>
@@ -574,7 +581,7 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 					src="${item.data.ctaImage || ""}"
 					width="600" height="160"
 					style="display:block; padding:0; margin:0; border:0; width:600px; height:160px;"
-					alt="Test Phase" />
+					alt="CTA" />
 				</a>
 			  </td>
 					  </tr>

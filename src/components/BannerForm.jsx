@@ -9,6 +9,9 @@ export default function BannerForm({ data, onChange, onRemove }) {
     const handleLinkChange = (e) => {
         onChange({ ...data, bannerLinkText: e.target.value });
     };
+    const handleAltTitleChange = (e) => {
+        onChange({ ...data, bannerAltTitle: e.target.value });
+    };
 
     return (
         <section className="form-banner">
@@ -29,6 +32,14 @@ export default function BannerForm({ data, onChange, onRemove }) {
                 id="banner-link"
                 value={data.bannerLinkText || ""}
                 onChange={handleLinkChange}
+            />
+
+            <label htmlFor="banner-alt/title">Banner Alt/Title</label>
+            <input
+                type="text"
+                id="banner-alt/title"
+                value={data.bannerAltTitle || ""}
+                onChange={handleAltTitleChange}
             />
         </section>
     );

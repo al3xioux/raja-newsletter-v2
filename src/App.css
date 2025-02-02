@@ -163,16 +163,24 @@ button[type="button"]:hover {
 
 /* Align document title and language on the same line */
 #formglobal {
+    /* Passage en mode colonne pour placer l'input sous le label */
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    margin: 10px 0
+    align-items: flex-start;
+    gap: 5px; /* Espace entre le label et l'input */
+    margin: 10px 0;
 }
 
 #formglobal label {
-    margin-right: 10px;
+    margin-right: 0; /* On retire la marge droite puisque le label est au-dessus */
+}
+
+/* Optionnel : forcer tous les labels à s'afficher en bloc */
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 #formglobal input[type="text"], #formglobal select {

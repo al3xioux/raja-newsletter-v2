@@ -7,6 +7,18 @@ export default function TitleForm({ data, onChange, onRemove }) {
         onChange({ ...data, bigTitle: e.target.value });
     };
 
+    const handleTextSizeChange = (e) => {
+        onChange({ ...data, textSize: e.target.value });
+    };
+
+    const handleTextBoldChange = (e) => {
+        onChange({ ...data, bold: e.target.value });
+    };
+
+    const handleTextColorChange = (e) => {
+        onChange({ ...data, textColor: e.target.value });
+    };
+
     return (
         <section className="form-title">
             <button type="button" className="delete-btn" onClick={onRemove}>
@@ -18,6 +30,44 @@ export default function TitleForm({ data, onChange, onRemove }) {
                 id="bigTitle"
                 value={data.bigTitle || ""}
                 onChange={handleTitleChange}
+            />
+
+            <label htmlFor="textsize">Text size</label>
+            <input
+                type="text"
+                id="textsize"
+                value={data.textSize || ""}
+                onChange={handleTextSizeChange}
+            />
+
+            <label htmlFor="textbold">Text bold</label>
+            <div role="radiogroup">
+                <label htmlFor="boldYes">Yes</label>
+                <input
+                    type="radio"
+                    id="boldYes"
+                    name="bold"
+                    value="1000"
+                    checked={data.bold === "1000"}
+                    onChange={handleTextBoldChange}
+                />
+                <label htmlFor="boldNo">No</label>
+                <input
+                    type="radio"
+                    id="boldNo"
+                    name="bold"
+                    value="500"
+                    checked={data.bold === "500"}
+                    onChange={handleTextBoldChange}
+                />
+            </div>
+
+            <label htmlFor="textcolor">Text color</label>
+            <input
+                type="color"
+                id="textcolor"
+                value={data.textColor || ""}
+                onChange={handleTextColorChange}
             />
         </section>
     );

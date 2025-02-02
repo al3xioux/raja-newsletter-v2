@@ -4,6 +4,7 @@ import BannerForm from "../components/BannerForm";
 import OneProductForm from "../components/OneProductForm";
 import ProductForm from "../components/ProductForm";
 import CTAForm from "../components/CTAForm";
+import LegalNotice from "../components/LegalNotice";
 
 import generateHtml from "../utils/generateHtml";
 import { HEADERS, FOOTERS } from "../data/var"; // par exemple si vous avez un objet HEADERS, FOOTERS
@@ -132,6 +133,8 @@ export default function NewsletterCreation() {
                                 return <ProductForm key={id} data={data} onChange={onChange} onRemove={onRemove} />;
                             case "cta":
                                 return <CTAForm key={id} data={data} onChange={onChange} onRemove={onRemove} />;
+                            case "legalNotice":
+                                return <LegalNotice key={id} data={data} onChange={onChange} onRemove={onRemove} />;
                             default:
                                 return null;
                         }
@@ -144,6 +147,7 @@ export default function NewsletterCreation() {
                     <button type="button" onClick={() => addForm("oneProduct")}>Add 1 Product</button>
                     <button type="button" onClick={() => addForm("product")}>Add 2 Products</button>
                     <button type="button" onClick={() => addForm("cta")}>Add CTA</button>
+                    <button type="button" onClick={() => addForm("legalNotice")}>Add Legal Notice</button>
                 </div>
             </div>
 
