@@ -182,6 +182,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         <option value="Från">Från</option>
                         <option value="Už">Už</option>
                         <option value="From">From</option>
+                        <option value="A partir de">A partir de</option>
                     </select>
 
                     <label htmlFor="crossed-out-price1">Crossed Out Price 1</label>
@@ -328,6 +329,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         <option value="Från">Från</option>
                         <option value="Už">Už</option>
                         <option value="From">From</option>
+                        <option value="A partir de">A partir de</option>
                     </select>
 
                     <label htmlFor="crossed-out-price2">Crossed Out Price 2</label>

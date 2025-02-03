@@ -195,7 +195,7 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 									  <td align="left" style="font-size:14px; color:#FE9600;">
 									  	<a class="resize_text16" href="${item.data.one_productLink || "#"}" target="_blank" style="color:#FE9600; text-decoration:none;">${item.data.one_from || ""}<br>
 									  	<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">&nbsp;${item.data.one_fromPrice || ""}</span>&nbsp;
-									  	<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.one_crossedOutPrice ? `&nbsp;${item.data.one_crossedOutPrice}&nbsp;` : ""}</strike>
+									  	<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.one_crossedOutPrice ? `&nbsp;${item.data.one_crossedOutPrice}&nbsp;` : ""}</strike></span>&nbsp;
 										  <span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">&nbsp;${item.data.one_price || ""}</span>&nbsp;<br>
 										  ${item.data.one_unit || ""}
 										</a>
@@ -345,8 +345,7 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 																		  ${item.data.from1 || ""}<br>
 																			<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">&nbsp;${item.data.fromPrice1 || ""}</span>&nbsp;
 									  										<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice1 ? `&nbsp;${item.data.crossedOutPrice1}&nbsp;` : ""}</strike></span>&nbsp;
-																		  <span class="resize_text30"
-																			  style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price1 || ""}</span>&nbsp;
+																		  <span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price1 || ""}</span>&nbsp;<br>
 																		  ${item.data.unit1 || ""}
 																	  </a>
 																  </td>
@@ -464,9 +463,8 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 																  style="font-size:14px; color:#FE9600; text-decoration:none;">
 																  ${item.data.from2 || ""}<br>
 																	<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">&nbsp;${item.data.fromPrice2 || ""}</span>&nbsp;
-									  										<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice2 ? `&nbsp;${item.data.crossedOutPrice2}&nbsp;` : ""}</strike></span>&nbsp;
-																	<span class="resize_text30"
-																	  style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price2 || ""}</span>&nbsp;<br>
+									  								<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice2 ? `&nbsp;${item.data.crossedOutPrice2}&nbsp;` : ""}</strike></span>&nbsp;
+																	<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price2 || ""}</span>&nbsp;<br>
 																  ${item.data.unit2 || ""}
 															  </a>
 														  </td>

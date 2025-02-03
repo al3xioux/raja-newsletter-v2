@@ -175,6 +175,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         <option value="Från">Från</option>
                         <option value="Už">Už</option>
                         <option value="From">From</option>
+                        <option value="A partir de">A partir de</option>
                     </select>
 
                     <label htmlFor="one_crossed-out-price">Crossed Out Price</label>
