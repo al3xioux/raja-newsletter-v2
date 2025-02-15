@@ -161,23 +161,20 @@ button[type="button"]:hover {
     background-color: #5929F4;
 }
 
-/* Align document title and language on the same line */
 #formglobal {
-    /* Passage en mode colonne pour placer l'input sous le label */
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 5px; /* Espace entre le label et l'input */
+    gap: 5px;
     margin: 10px 0;
 }
 
 #formglobal label {
-    margin-right: 0; /* On retire la marge droite puisque le label est au-dessus */
+    margin-right: 0;
 }
 
-/* Optionnel : forcer tous les labels à s'afficher en bloc */
 label {
     display: block;
     margin-bottom: 5px;
@@ -187,21 +184,19 @@ label {
     flex: 1;
 }
 
-/* Container for the form and buttons to be side by side */
 #main-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Adjust as needed */
+    max-width: 1200px;
     margin: 0 0;
 }
 
-/* Align buttons in a row */
 #button-container {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Add space between buttons */
+    gap: 10px;
 }
 
 .form-product, .product-line {

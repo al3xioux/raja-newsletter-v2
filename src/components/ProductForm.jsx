@@ -57,26 +57,24 @@ export default function ProductForm({ data, onChange, onRemove }) {
     return (
         <section className="product-group">
             <form className="form-product">
-                <button type="button" className="delete-btn" onClick={onRemove}>
-                    X
-                </button>
+                <button type="button" className="delete-btn" onClick={onRemove}></button>
 
                 <section className="product-line">
-                    <label>Product Link 1</label>
+                    <label className="form-label">Product Link 1</label>
                     <input
                         type="text"
                         value={data.productLink1 || ""}
                         onChange={updateField("productLink1")}
                     />
 
-                    <label>Image 1</label>
+                    <label className="form-label">Image 1</label>
                     <input
                         type="text"
                         value={data.image1 || ""}
                         onChange={updateField("image1")}
                     />
 
-                    <label>Eco-Label 1</label>
+                    <label className="form-label">Eco-Label 1</label>
                     <input
                         type="text"
                         value={data.ecolabel1 || ""}
@@ -101,7 +99,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         Crit Green
                     </button>
 
-                    <label>Title 1</label>
+                    <label className="form-label">Title 1</label>
                     <input
                         type="text"
                         ref={title1InputRef}
@@ -110,7 +108,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         maxLength={66}
                     />
 
-                    <label>Text 1</label>
+                    <label className="form-label">Text 1</label>
                     <input
                         type="text"
                         ref={text1InputRef}
@@ -119,7 +117,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         maxLength={85}
                     />
 
-                    <label>Label 1</label>
+                    <label className="form-label">Label 1</label>
                     <input
                         type="text"
                         value={data.label1 || ""}
@@ -144,7 +142,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         Label
                     </button>
 
-                    <label>From 1 ?</label>
+                    <label className="form-label">From 1 ?</label>
                     <div role="radiogroup">
                         <label htmlFor="fromYes1">Yes</label>
                         <input
@@ -166,7 +164,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         />
                     </div>
 
-                    <label htmlFor="from-price1">From Price 1</label>
+                    <label htmlFor="from-price1" className="form-label">From Price 1</label>
                     <select
                         id="from-price1"
                         value={data.fromPrice1 || ""}
@@ -185,7 +183,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         <option value="A partir de">A partir de</option>
                     </select>
 
-                    <label htmlFor="crossed-out-price1">Crossed Out Price 1</label>
+                    <label htmlFor="crossed-out-price1" className="form-label">Crossed Out Price 1</label>
                     <input
                         type="text"
                         id="crossed-out-price1"
@@ -193,14 +191,14 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         onChange={updateField("crossedOutPrice1")}
                     />
                     
-                    <label>Price 1</label>
+                    <label className="form-label">Price 1</label>
                     <input
                         type="text"
                         value={data.price1 || ""}
                         onChange={updateField("price1")}
                     />
 
-                    <label>Unit 1</label>
+                    <label className="form-label">Unit 1</label>
                     <input
                         type="text"
                         value={data.unit1 || ""}
@@ -209,21 +207,21 @@ export default function ProductForm({ data, onChange, onRemove }) {
                 </section>
 
                 <section className="product-line">
-                    <label>Product Link 2</label>
+                    <label className="form-label">Product Link 2</label>
                     <input
                         type="text"
                         value={data.productLink2 || ""}
                         onChange={updateField("productLink2")}
                     />
 
-                    <label>Image 2</label>
+                    <label className="form-label">Image 2</label>
                     <input
                         type="text"
                         value={data.image2 || ""}
                         onChange={updateField("image2")}
                     />
 
-                    <label>Eco-Label 2</label>
+                    <label className="form-label">Eco-Label 2</label>
                     <input
                         type="text"
                         value={data.ecolabel2 || ""}
@@ -248,7 +246,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         Crit Green
                     </button>
 
-                    <label>Title 2</label>
+                    <label className="form-label">Title 2</label>
                     <input
                         type="text"
                         ref={title2InputRef}
@@ -257,7 +255,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         maxLength={66}
                     />
 
-                    <label>Text 2</label>
+                    <label className="form-label">Text 2</label>
                     <input
                         type="text"
                         ref={text2InputRef}
@@ -266,7 +264,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         maxLength={85}
                     />
 
-                    <label>Label 2</label>
+                    <label className="form-label">Label 2</label>
                     <input
                         type="text"
                         value={data.label2 || ""}
@@ -291,7 +289,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         Label
                     </button>
 
-                    <label>From 2 ?</label>
+                    <label className="form-label">From 2 ?</label>
                     <div role="radiogroup">
                         <label htmlFor="fromYes2">Yes</label>
                         <input
@@ -313,7 +311,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         />
                     </div>
 
-                    <label htmlFor="from-price2">From Price 2</label>
+                    <label htmlFor="from-price2" className="form-label">From Price 2</label>
                     <select
                         id="from-price2"
                         value={data.fromPrice2 || ""}
@@ -332,7 +330,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         <option value="A partir de">A partir de</option>
                     </select>
 
-                    <label htmlFor="crossed-out-price2">Crossed Out Price 2</label>
+                    <label htmlFor="crossed-out-price2" className="form-label">Crossed Out Price 2</label>
                     <input
                         type="text"
                         id="crossed-out-price2"
@@ -340,14 +338,14 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         onChange={updateField("crossedOutPrice2")}
                     />
 
-                    <label>Price 2</label>
+                    <label className="form-label">Price 2</label>
                     <input
                         type="text"
                         value={data.price2 || ""}
                         onChange={updateField("price2")}
                     />
 
-                    <label>Unit 2</label>
+                    <label className="form-label">Unit 2</label>
                     <input
                         type="text"
                         value={data.unit2 || ""}

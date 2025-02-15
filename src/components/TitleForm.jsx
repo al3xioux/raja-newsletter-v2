@@ -21,27 +21,30 @@ export default function TitleForm({ data, onChange, onRemove }) {
 
     return (
         <section className="form-title">
-            <button type="button" className="delete-btn" onClick={onRemove}>
-                X
-            </button>
-            <label htmlFor="bigTitle">Title</label>
+            <button type="button" className="delete-btn" onClick={onRemove}></button>
+            <br></br>
+            <label className="form-label" htmlFor="bigTitle">Title</label>
+            <br></br>
             <input
                 type="text"
                 id="bigTitle"
                 value={data.bigTitle || ""}
                 onChange={handleTitleChange}
             />
+            <br></br>
 
-            <label htmlFor="textsize">Text size</label>
+            <label className="form-label" htmlFor="textsize">Text size</label>
+            <br></br>
             <input
                 type="text"
                 id="textsize"
                 value={data.textSize || ""}
                 onChange={handleTextSizeChange}
             />
+            <br></br>
 
-            <label htmlFor="textbold">Text bold</label>
-            <div role="radiogroup">
+            <label className="form-label" htmlFor="textbold">Text bold</label>
+            <section role="radiogroup">
                 <label htmlFor="boldYes">Yes</label>
                 <input
                     type="radio"
@@ -60,9 +63,10 @@ export default function TitleForm({ data, onChange, onRemove }) {
                     checked={data.bold === "500"}
                     onChange={handleTextBoldChange}
                 />
-            </div>
+            </section>
 
-            <label htmlFor="textcolor">Text color</label>
+            <label className="form-label" htmlFor="textcolor">Text color</label>
+            <br></br>
             <input
                 type="color"
                 id="textcolor"

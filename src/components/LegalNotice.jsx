@@ -6,10 +6,11 @@ export default function LegalNotice({ data, onChange, onRemove }) {
     };
     return (
         <div className="form-legal-notice">
-            <button type="button" className="delete-btn" onClick={onRemove}>
-                X
-            </button>
-            <label htmlFor="legal-notice">Legal Notice</label>
+            <button type="button" className="delete-btn" onClick={onRemove}></button>
+            <br></br>
+
+            <label htmlFor="legal-notice" className="form-label">Legal Notice</label>
+            <br></br>
             <input
                 type="text"
                 id="legal-notice"

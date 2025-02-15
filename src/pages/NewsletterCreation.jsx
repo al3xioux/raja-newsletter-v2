@@ -147,7 +147,7 @@ export default function NewsletterCreation() {
                     <button type="button" onClick={() => addForm("oneProduct")}>Add 1 Product</button>
                     <button type="button" onClick={() => addForm("product")}>Add 2 Products</button>
                     <button type="button" onClick={() => addForm("cta")}>Add CTA</button>
-                    <button type="button" onClick={() => addForm("legalNotice")}>Add Legal Notice</button>
+                    {/*<button type="button" onClick={() => addForm("legalNotice")}>Add Legal Notice</button>*/}
                 </div>
             </div>
 

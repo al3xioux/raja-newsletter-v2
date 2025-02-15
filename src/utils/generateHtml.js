@@ -130,7 +130,6 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
   ${header}
   `;
 
-	// On boucle sur chaque bloc et on insère VOS TEMPLATES EXACTS
 	blocks.forEach((item) => {
 		switch (item.type) {
 			case "oneProduct":

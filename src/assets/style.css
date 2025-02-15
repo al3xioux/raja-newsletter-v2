@@ -170,7 +170,6 @@ button[type="button"]:hover {
     justify-content: flex-start;
 }
 
-/* par ex .product-line => style */
 .product-line {
     display: flex;
     flex-direction: column;
@@ -178,11 +177,10 @@ button[type="button"]:hover {
     margin-bottom: 10px;
 }
 
-/* Bouton X pour supprimer */
 .delete-btn {
     background-color: #C0392B;
     color: #fff;
-    border-radius: 50%;
+    border-radius: 20px;
     font-size: 0.9rem;
     width: 25px;
     height: 25px;
@@ -195,4 +193,10 @@ button[type="button"]:hover {
 
 .delete-btn:hover {
     background-color: #A93226;
+}
+
+.form-label {
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
 }

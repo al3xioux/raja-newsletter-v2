@@ -15,26 +15,31 @@ export default function BannerForm({ data, onChange, onRemove }) {
 
     return (
         <section className="form-banner">
-            <button type="button" className="delete-btn" onClick={onRemove}>
-                X
-            </button>
-            <label htmlFor="banner-image">Banner Image</label>
+            <button type="button" className="delete-btn" onClick={onRemove}></button>
+            <br></br>
+
+            <label htmlFor="banner-image" className="form-label">Banner Image</label>
+            <br></br>
             <input
                 type="text"
                 id="banner-image"
                 value={data.bannerImage || ""}
                 onChange={handleImageChange}
             />
+            <br></br>
 
-            <label htmlFor="banner-link">Banner Link</label>
+            <label htmlFor="banner-link" className="form-label">Banner Link</label>
+            <br></br>
             <input
                 type="text"
                 id="banner-link"
                 value={data.bannerLinkText || ""}
                 onChange={handleLinkChange}
             />
+            <br></br>
 
-            <label htmlFor="banner-alt/title">Banner Alt/Title</label>
+            <label htmlFor="banner-alt/title" className="form-label">Banner Alt/Title</label>
+            <br></br>
             <input
                 type="text"
                 id="banner-alt/title"

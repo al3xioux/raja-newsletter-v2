@@ -11,19 +11,21 @@ export default function CTAForm({ data, onChange, onRemove }) {
 
     return (
         <section className="form-cta">
-            <button type="button" className="delete-btn" onClick={onRemove}>
-                X
-            </button>
+            <button type="button" className="delete-btn" onClick={onRemove}></button>
+            <br></br>
 
-            <label htmlFor="cta-image">CTA Image</label>
+            <label htmlFor="cta-image" className="form-label">CTA Image</label>
+            <br></br>
             <input
                 type="text"
                 id="cta-image"
                 value={data.ctaImage || ""}
                 onChange={handleImageChange}
             />
+            <br></br>
 
-            <label htmlFor="cta-link">CTA Link</label>
+            <label htmlFor="cta-link" className="form-label">CTA Link</label>
+            <br></br>
             <input
                 type="text"
                 id="cta-link"

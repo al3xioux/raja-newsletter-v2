@@ -44,12 +44,10 @@ export default function OneProductForm({ data, onChange, onRemove }) {
     return (
         <section className="product-group">
             <form className="form-product">
-                <button type="button" className="delete-btn" onClick={onRemove}>
-                    X
-                </button>
+                <button type="button" className="delete-btn" onClick={onRemove}></button>
 
                 <section className="product-line">
-                    <label htmlFor="one_productLink">Product Link</label>
+                    <label htmlFor="one_productLink" className="form-label">Product Link</label>
                     <input
                         type="text"
                         id="one_productLink"
@@ -57,7 +55,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         onChange={updateField("one_productLink")}
                     />
 
-                    <label htmlFor="one_image">Image</label>
+                    <label htmlFor="one_image" className="form-label">Image</label>
                     <input
                         type="text"
                         id="one_image"
@@ -65,7 +63,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         onChange={updateField("one_image")}
                     />
 
-                    <label htmlFor="one_ecolabel">Eco-Label</label>
+                    <label htmlFor="one_ecolabel" className="form-label">Eco-Label</label>
                     <input
                         type="text"
                         id="one_ecolabel"
@@ -91,7 +89,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         Crit Green
                     </button>
 
-                    <label htmlFor="one_title">Title</label>
+                    <label htmlFor="one_title" className="form-label">Title</label>
                     <input
                         type="text"
                         id="one_title"
@@ -101,7 +99,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         maxLength={66}
                     />
 
-                    <label htmlFor="one_text">Text</label>
+                    <label htmlFor="one_text" className="form-label">Text</label>
                     <input
                         type="text"
                         id="one_text"
@@ -111,7 +109,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         maxLength={85}
                     />
 
-                    <label htmlFor="one_label">Label</label>
+                    <label htmlFor="one_label" className="form-label">Label</label>
                     <input
                         type="text"
                         id="one_label"
@@ -137,7 +135,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         Label
                     </button>
 
-                    <label>From ?</label>
+                    <label className="form-label">From ?</label>
                     <div role="radiogroup">
                         <label htmlFor="fromYes">Yes</label>
                         <input
@@ -159,7 +157,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         />
                     </div>
 
-                    <label htmlFor="one_from-price">From Price</label>
+                    <label htmlFor="one_from-price" className="form-label">From Price</label>
                     <select
                         id="one_from-price"
                         value={data.one_fromPrice || ""}
@@ -178,7 +176,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         <option value="A partir de">A partir de</option>
                     </select>
 
-                    <label htmlFor="one_crossed-out-price">Crossed Out Price</label>
+                    <label htmlFor="one_crossed-out-price" className="form-label">Crossed Out Price</label>
                     <input
                         type="text"
                         id="one_crossed-out-price"
@@ -186,7 +184,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         onChange={updateField("one_crossedOutPrice")}
                     />
 
-                    <label htmlFor="one_price">Price</label>
+                    <label htmlFor="one_price" className="form-label">Price</label>
                     <input
                         type="text"
                         id="one_price"
@@ -194,7 +192,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                         onChange={updateField("one_price")}
                     />
 
-                    <label htmlFor="one_unit">Unit</label>
+                    <label htmlFor="one_unit" className="form-label">Unit</label>
                     <input
                         type="text"
                         id="one_unit"
