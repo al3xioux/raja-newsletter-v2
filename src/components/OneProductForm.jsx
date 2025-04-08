@@ -1,7 +1,29 @@
 // src/components/OneProductForm.jsx
 import React, { useEffect, useRef } from "react";
 
-export default function OneProductForm({ data, onChange, onRemove }) {
+const fromPriceOptions = {
+    fr: "A partir de",
+    es: "Desde",
+    uk: "From",
+    de: "Ab",
+    at: "Ab",
+    bfl: "Vanaf",
+    bfr: "A partir de",
+    cde: "Ab",
+    cfr: "Dès",
+    cz: "Již",
+    dk: "Fra",
+    hu: "Już",
+    it: "Da",
+    nl: "Vanaf",
+    no: "Fra",
+    pl: "Już",
+    pt: "Desde",
+    se: "Från",
+    sk: "Už"
+};
+
+export default function OneProductForm({ data, onChange, onRemove, language }) {
     const titleInputRef = useRef(null);
     const textInputRef = useRef(null);
 
@@ -26,6 +48,13 @@ export default function OneProductForm({ data, onChange, onRemove }) {
         }
     }, []);
 
+    // Ajouter un useEffect pour mettre à jour le fromPrice
+    useEffect(() => {
+        if (language && fromPriceOptions[language] && data.one_from !== "") {
+            onChange({ ...data, one_fromPrice: fromPriceOptions[language] });
+        }
+    }, [language, data.one_from]);
+
     // Helper pour mettre à jour un champ
     const updateField = (field) => (e) => {
         onChange({ ...data, [field]: e.target.value });
@@ -44,7 +73,7 @@ export default function OneProductForm({ data, onChange, onRemove }) {
     return (
         <section className="product-group">
             <form className="form-product">
-                <button type="button" className="delete-btn" onClick={onRemove}></button>
+            <button type="button" className="delete-btn" onClick={onRemove} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i class="fa-solid fa-delete-left"></i></button>
 
                 <section className="product-line">
                     <label htmlFor="one_productLink" className="form-label">Product Link</label>
@@ -64,12 +93,26 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                     />
 
                     <label htmlFor="one_ecolabel" className="form-label">Eco-Label</label>
-                    <input
-                        type="text"
-                        id="one_ecolabel"
-                        value={data.one_ecolabel || ""}
-                        onChange={updateField("one_ecolabel")}
-                    />
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                        <button
+                            type="button"
+                            onClick={() =>
+                                window.open(
+                                    "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays.html",
+                                    "_blank"
+                                )
+                            }
+                        >
+                            Select and paste
+                        </button>
+                        <input
+                            type="text"
+                            id="one_ecolabel"
+                            value={data.one_ecolabel || ""}
+                            onChange={updateField("one_ecolabel")}
+                            style={{ flex: 1 }}
+                        />
+                    </div>
                     {hasEcoLabelPreview && (
                         <img
                             src={data.one_ecolabel}
@@ -77,17 +120,6 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                             style={{ maxWidth: "200px", margin: "8px 0" }}
                         />
                     )}
-                    <button
-                        type="button"
-                        onClick={() =>
-                            window.open(
-                                "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays.html",
-                                "_blank"
-                            )
-                        }
-                    >
-                        Crit Green
-                    </button>
 
                     <label htmlFor="one_title" className="form-label">Title</label>
                     <input
@@ -110,12 +142,26 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                     />
 
                     <label htmlFor="one_label" className="form-label">Label</label>
-                    <input
-                        type="text"
-                        id="one_label"
-                        value={data.one_label || ""}
-                        onChange={updateField("one_label")}
-                    />
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                        <button
+                            type="button"
+                            onClick={() =>
+                                window.open(
+                                    "https://imgnews.raja-group.com/00-structure/label/_label-all-pays.html",
+                                    "_blank"
+                                )
+                            }
+                        >
+                            Select and paste
+                        </button>
+                        <input
+                            type="text"
+                            id="one_label"
+                            value={data.one_label || ""}
+                            onChange={updateField("one_label")}
+                            style={{ flex: 1 }}
+                        />
+                    </div>
                     {hasLabelPreview && (
                         <img
                             src={data.one_label}
@@ -123,58 +169,25 @@ export default function OneProductForm({ data, onChange, onRemove }) {
                             style={{ maxWidth: "200px", margin: "8px 0" }}
                         />
                     )}
-                    <button
-                        type="button"
-                        onClick={() =>
-                            window.open(
-                                "https://imgnews.raja-group.com/00-structure/label/_label-all-pays.html",
-                                "_blank"
-                            )
-                        }
-                    >
-                        Label
-                    </button>
 
-                    <label className="form-label">From ?</label>
-                    <div role="radiogroup">
-                        <label htmlFor="fromYes">Yes</label>
-                        <input
-                            type="radio"
-                            id="fromYes"
-                            name="one_from"
-                            value="From"
-                            checked={data.one_from === "From"}
-                            onChange={updateField("one_from")}
-                        />
-                        <label htmlFor="fromNo">No</label>
-                        <input
-                            type="radio"
-                            id="fromNo"
-                            name="one_from"
-                            value=""
-                            checked={data.one_from === ""}
-                            onChange={updateField("one_from")}
-                        />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', margin: '8px 0' }}>
+                        <label className="form-label" style={{ marginBottom: 0 }}>From ?</label>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                            <input
+                                type="checkbox"
+                                id="fromNo"
+                                checked={data.one_from === ""}
+                                onChange={(e) => {
+                                    if (e.target.checked) {
+                                        onChange({ ...data, one_from: "", one_fromPrice: "" });
+                                    } else {
+                                        onChange({ ...data, one_from: "From", one_fromPrice: fromPriceOptions[language] });
+                                    }
+                                }}
+                            />
+                            <label htmlFor="fromNo">No</label>
+                        </div>
                     </div>
-
-                    <label htmlFor="one_from-price" className="form-label">From Price</label>
-                    <select
-                        id="one_from-price"
-                        value={data.one_fromPrice || ""}
-                        onChange={updateField("one_fromPrice")}
-                    >
-                        <option value="">---Please choose an option---</option>
-                        <option value="Ab">Ab</option>
-                        <option value="Dès">Dès</option>
-                        <option value="Již">Již</option>
-                        <option value="Fra">Fra</option>
-                        <option value="Już">Już</option>
-                        <option value="Desde">Desde</option>
-                        <option value="Från">Från</option>
-                        <option value="Už">Už</option>
-                        <option value="From">From</option>
-                        <option value="A partir de">A partir de</option>
-                    </select>
 
                     <label htmlFor="one_crossed-out-price" className="form-label">Crossed Out Price</label>
                     <input

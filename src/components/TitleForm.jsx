@@ -21,8 +21,8 @@ export default function TitleForm({ data, onChange, onRemove }) {
 
     return (
         <section className="form-title">
-            <button type="button" className="delete-btn" onClick={onRemove}></button>
-            <br></br>
+                <button type="button" className="delete-btn" onClick={onRemove} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i class="fa-solid fa-delete-left"></i></button>
+                <br></br>
             <label className="form-label" htmlFor="bigTitle">Title</label>
             <br></br>
             <input

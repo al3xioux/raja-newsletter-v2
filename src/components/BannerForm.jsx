@@ -15,10 +15,10 @@ export default function BannerForm({ data, onChange, onRemove }) {
 
     return (
         <section className="form-banner">
-            <button type="button" className="delete-btn" onClick={onRemove}></button>
-            <br></br>
+                <button type="button" className="delete-btn" onClick={onRemove} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i class="fa-solid fa-delete-left"></i></button>
+                <br></br>
 
-            <label htmlFor="banner-image" className="form-label">Banner Image</label>
+            <label htmlFor="banner-image" className="form-label">Banner Image </label>
             <br></br>
             <input
                 type="text"

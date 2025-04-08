@@ -36,6 +36,7 @@ export default function NewsletterCreation() {
     };
 
     // Gère la sélection du pays
+    const [showSelect, setShowSelect] = useState(false);
     const handleLanguageChange = (e) => {
         setLanguage(e.target.value);
     };
@@ -52,10 +53,10 @@ export default function NewsletterCreation() {
         const footer = FOOTERS[language] || "";
 
         // On appelle generateHtml en passant le titre
-        // (on peut passer un 3eme ou 4eme paramètre “docTitle” si la fonction le gère).
+        // (on peut passer un 3eme ou 4eme paramètre "docTitle" si la fonction le gère).
         const html = generateHtml(renderedForms, header, footer, documentTitle);
 
-        // Nom de fichier : si user n’a rien saisi, on met "newsletter".
+        // Nom de fichier : si user n'a rien saisi, on met "newsletter".
         const fileName = documentTitle.trim() ? documentTitle.trim() : "newsletter";
 
         // Téléchargement
@@ -89,29 +90,48 @@ export default function NewsletterCreation() {
                     onChange={handleDocumentTitleChange}
                 />
 
-                <label htmlFor="language">Country :</label>
-                <select id="language" value={language} onChange={handleLanguageChange}>
-                    <option value="">---Please choose an option---</option>
-                    <option value="fr">FR</option>
-                    <option value="es">ES</option>
-                    <option value="uk">UK</option>
-                    <option value="de">DE</option>
-                    <option value="at">AT</option>
-                    <option value="bfl">BFL</option>
-                    <option value="bfr">BFR</option>
-                    <option value="cde">CDE</option>
-                    <option value="cfr">CFR</option>
-                    <option value="cz">CZ</option>
-                    <option value="dk">DK</option>
-                    <option value="hu">HU</option>
-                    <option value="it">IT</option>
-                    <option value="nl">NL</option>
-                    <option value="no">NO</option>
-                    <option value="pl">PL</option>
-                    <option value="pt">PT</option>
-                    <option value="se">SE</option>
-                    <option value="sk">SK</option>
-                </select>
+                <label htmlFor="language">
+                    <button
+                        type="button"
+                        onClick={() => setShowSelect(!showSelect)}
+                        className="country-select-button">
+                            <i class="fa-solid fa-flag" style={{color: "white"}}></i>
+                    </button>
+                </label>
+
+                {showSelect && (
+                    <select
+                        id="language"
+                        value={language}
+                        onChange={handleLanguageChange}
+                        style={{ 
+                            display: "block", 
+                            marginTop: "0",
+                            width: "100px" 
+                        }}
+                    >
+                        <option value="">-----------Please choose an option-----------</option>
+                        <option value="fr">France</option>
+                        <option value="es">Espagne</option>
+                        <option value="uk">Royaume-Uni</option>
+                        <option value="de">Allemagne</option>
+                        <option value="at">Autriche</option>
+                        <option value="bfl">Belgique FL</option>
+                        <option value="bfr">Belgique FR</option>
+                        <option value="cde">Suisse DE</option>
+                        <option value="cfr">Suisse FR</option>
+                        <option value="cz">République Tchèque</option>
+                        <option value="dk">Danemark</option>
+                        <option value="hu">Hongrie</option>
+                        <option value="it">Italie</option>
+                        <option value="nl">Pays-Bas</option>
+                        <option value="no">Norvège</option>
+                        <option value="pl">Pologne</option>
+                        <option value="pt">Portugal</option>
+                        <option value="se">Suède</option>
+                        <option value="sk">Slovaquie</option>
+                    </select>
+                )}
             </form>
 
             {/* LIGNE 2 : #main-container (2 colonnes) */}
@@ -128,9 +148,9 @@ export default function NewsletterCreation() {
                             case "banner":
                                 return <BannerForm key={id} data={data} onChange={onChange} onRemove={onRemove} />;
                             case "oneProduct":
-                                return <OneProductForm key={id} data={data} onChange={onChange} onRemove={onRemove} />;
+                                return <OneProductForm key={id} data={data} onChange={onChange} onRemove={onRemove} language={language} />;
                             case "product":
-                                return <ProductForm key={id} data={data} onChange={onChange} onRemove={onRemove} />;
+                                return <ProductForm key={id} data={data} onChange={onChange} onRemove={onRemove} language={language} />;
                             case "cta":
                                 return <CTAForm key={id} data={data} onChange={onChange} onRemove={onRemove} />;
                             case "legalNotice":
@@ -147,7 +167,7 @@ export default function NewsletterCreation() {
                     <button type="button" onClick={() => addForm("oneProduct")}>Add 1 Product</button>
                     <button type="button" onClick={() => addForm("product")}>Add 2 Products</button>
                     <button type="button" onClick={() => addForm("cta")}>Add CTA</button>
-                    {/*<button type="button" onClick={() => addForm("legalNotice")}>Add Legal Notice</button>*/}
+                    <button type="button" onClick={() => addForm("legalNotice")}>Add Legal Notice</button>
                 </div>
             </div>
 

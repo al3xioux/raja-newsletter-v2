@@ -1,7 +1,29 @@
 // src/components/ProductForm.jsx
 import React, { useEffect, useRef } from "react";
 
-export default function ProductForm({ data, onChange, onRemove }) {
+const fromPriceOptions = {
+    fr: "A partir de",
+    es: "Desde",
+    uk: "From",
+    de: "Ab",
+    at: "Ab",
+    bfl: "Vanaf",
+    bfr: "A partir de",
+    cde: "Ab",
+    cfr: "Dès",
+    cz: "Již",
+    dk: "Fra",
+    hu: "Już",
+    it: "Da",
+    nl: "Vanaf",
+    no: "Fra",
+    pl: "Już",
+    pt: "Desde",
+    se: "Från",
+    sk: "Už"
+};
+
+export default function ProductForm({ data, onChange, onRemove, language }) {
     const title1InputRef = useRef(null);
     const text1InputRef = useRef(null);
     const title2InputRef = useRef(null);
@@ -34,8 +56,30 @@ export default function ProductForm({ data, onChange, onRemove }) {
         }
     }, []);
 
+    useEffect(() => {
+        if (language && fromPriceOptions[language]) {
+            const newData = { ...data };
+            
+            if (data.from1 !== "") {
+                newData.fromPrice1 = fromPriceOptions[language];
+            }
+            if (data.from2 !== "") {
+                newData.fromPrice2 = fromPriceOptions[language];
+            }
+            
+            onChange(newData);
+        }
+    }, [language, data.from1, data.from2]);
+
     const updateField = (field) => (e) => {
-        onChange({ ...data, [field]: e.target.value });
+        if (field === "from1" || field === "from2") {
+            const fromValue = e.target.value;
+            const fromPriceField = field === "from1" ? "fromPrice1" : "fromPrice2";
+            const fromPriceValue = fromValue === "From" ? fromPriceOptions[language] : "";
+            onChange({ ...data, [field]: fromValue, [fromPriceField]: fromPriceValue });
+        } else {
+            onChange({ ...data, [field]: e.target.value });
+        }
     };
 
     const hasEcoLabel1Preview =
@@ -57,29 +101,43 @@ export default function ProductForm({ data, onChange, onRemove }) {
     return (
         <section className="product-group">
             <form className="form-product">
-                <button type="button" className="delete-btn" onClick={onRemove}></button>
+                <button type="button" className="delete-btn" onClick={onRemove} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i class="fa-solid fa-delete-left"></i></button>
 
                 <section className="product-line">
-                    <label className="form-label">Product Link 1</label>
+                    <label className="form-label">Product Link</label>
                     <input
                         type="text"
                         value={data.productLink1 || ""}
                         onChange={updateField("productLink1")}
                     />
 
-                    <label className="form-label">Image 1</label>
+                    <label className="form-label">Image</label>
                     <input
                         type="text"
                         value={data.image1 || ""}
                         onChange={updateField("image1")}
                     />
 
-                    <label className="form-label">Eco-Label 1</label>
-                    <input
-                        type="text"
-                        value={data.ecolabel1 || ""}
-                        onChange={updateField("ecolabel1")}
-                    />
+                    <label className="form-label">Eco-Label</label>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                        <button
+                            type="button"
+                            onClick={() =>
+                                window.open(
+                                    "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays.html",
+                                    "_blank"
+                                )
+                            }
+                        >
+                            Select and paste
+                        </button>
+                        <input
+                            type="text"
+                            value={data.ecolabel1 || ""}
+                            onChange={updateField("ecolabel1")}
+                            style={{ flex: 1 }}
+                        />
+                    </div>
                     {hasEcoLabel1Preview && (
                         <img
                             src={data.ecolabel1}
@@ -87,19 +145,8 @@ export default function ProductForm({ data, onChange, onRemove }) {
                             style={{ maxWidth: "200px", margin: "8px 0" }}
                         />
                     )}
-                    <button
-                        type="button"
-                        onClick={() =>
-                            window.open(
-                                "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays.html",
-                                "_blank"
-                            )
-                        }
-                    >
-                        Crit Green
-                    </button>
 
-                    <label className="form-label">Title 1</label>
+                    <label className="form-label">Title</label>
                     <input
                         type="text"
                         ref={title1InputRef}
@@ -108,7 +155,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         maxLength={66}
                     />
 
-                    <label className="form-label">Text 1</label>
+                    <label className="form-label">Text</label>
                     <input
                         type="text"
                         ref={text1InputRef}
@@ -117,12 +164,26 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         maxLength={85}
                     />
 
-                    <label className="form-label">Label 1</label>
-                    <input
-                        type="text"
-                        value={data.label1 || ""}
-                        onChange={updateField("label1")}
-                    />
+                    <label className="form-label">Label</label>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                        <button
+                            type="button"
+                            onClick={() =>
+                                window.open(
+                                    "https://imgnews.raja-group.com/00-structure/label/_label-all-pays.html",
+                                    "_blank"
+                                )
+                            }
+                        >
+                            Select and paste
+                        </button>
+                        <input
+                            type="text"
+                            value={data.label1 || ""}
+                            onChange={updateField("label1")}
+                            style={{ flex: 1 }}
+                        />
+                    </div>
                     {hasLabel1Preview && (
                         <img
                             src={data.label1}
@@ -130,60 +191,27 @@ export default function ProductForm({ data, onChange, onRemove }) {
                             style={{ maxWidth: "200px", margin: "8px 0" }}
                         />
                     )}
-                    <button
-                        type="button"
-                        onClick={() =>
-                            window.open(
-                                "https://imgnews.raja-group.com/00-structure/label/_label-all-pays.html",
-                                "_blank"
-                            )
-                        }
-                    >
-                        Label
-                    </button>
 
-                    <label className="form-label">From 1 ?</label>
-                    <div role="radiogroup">
-                        <label htmlFor="fromYes1">Yes</label>
-                        <input
-                            type="radio"
-                            id="fromYes1"
-                            name="from1"
-                            value="From"
-                            checked={data.from1 === "From"}
-                            onChange={updateField("from1")}
-                        />
-                        <label htmlFor="fromNo1">No</label>
-                        <input
-                            type="radio"
-                            id="fromNo1"
-                            name="from1"
-                            value=""
-                            checked={data.from1 === ""}
-                            onChange={updateField("from1")}
-                        />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', margin: '8px 0' }}>
+                        <label className="form-label" style={{ marginBottom: 0 }}>From ?</label>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                            <input
+                                type="checkbox"
+                                id="fromNo1"
+                                checked={data.from1 === ""}
+                                onChange={(e) => {
+                                    if (e.target.checked) {
+                                        onChange({ ...data, from1: "", fromPrice1: "" });
+                                    } else {
+                                        onChange({ ...data, from1: "From", fromPrice1: fromPriceOptions[language] });
+                                    }
+                                }}
+                            />
+                            <label htmlFor="fromNo1">No</label>
+                        </div>
                     </div>
 
-                    <label htmlFor="from-price1" className="form-label">From Price 1</label>
-                    <select
-                        id="from-price1"
-                        value={data.fromPrice1 || ""}
-                        onChange={updateField("fromPrice1")}
-                    >
-                        <option value="">---Please choose an option---</option>
-                        <option value="Ab">Ab</option>
-                        <option value="Dès">Dès</option>
-                        <option value="Již">Již</option>
-                        <option value="Fra">Fra</option>
-                        <option value="Już">Już</option>
-                        <option value="Desde">Desde</option>
-                        <option value="Från">Från</option>
-                        <option value="Už">Už</option>
-                        <option value="From">From</option>
-                        <option value="A partir de">A partir de</option>
-                    </select>
-
-                    <label htmlFor="crossed-out-price1" className="form-label">Crossed Out Price 1</label>
+                    <label htmlFor="crossed-out-price1" className="form-label">Crossed Out Price</label>
                     <input
                         type="text"
                         id="crossed-out-price1"
@@ -191,14 +219,14 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         onChange={updateField("crossedOutPrice1")}
                     />
                     
-                    <label className="form-label">Price 1</label>
+                    <label className="form-label">Price</label>
                     <input
                         type="text"
                         value={data.price1 || ""}
                         onChange={updateField("price1")}
                     />
 
-                    <label className="form-label">Unit 1</label>
+                    <label className="form-label">Unit</label>
                     <input
                         type="text"
                         value={data.unit1 || ""}
@@ -207,26 +235,40 @@ export default function ProductForm({ data, onChange, onRemove }) {
                 </section>
 
                 <section className="product-line">
-                    <label className="form-label">Product Link 2</label>
+                    <label className="form-label">Product Link</label>
                     <input
                         type="text"
                         value={data.productLink2 || ""}
                         onChange={updateField("productLink2")}
                     />
 
-                    <label className="form-label">Image 2</label>
+                    <label className="form-label">Image</label>
                     <input
                         type="text"
                         value={data.image2 || ""}
                         onChange={updateField("image2")}
                     />
 
-                    <label className="form-label">Eco-Label 2</label>
-                    <input
-                        type="text"
-                        value={data.ecolabel2 || ""}
-                        onChange={updateField("ecolabel2")}
-                    />
+                    <label className="form-label">Eco-Label</label>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                        <button
+                            type="button"
+                            onClick={() =>
+                                window.open(
+                                    "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays.html",
+                                    "_blank"
+                                )
+                            }
+                        >
+                            Select and paste
+                        </button>
+                        <input
+                            type="text"
+                            value={data.ecolabel2 || ""}
+                            onChange={updateField("ecolabel2")}
+                            style={{ flex: 1 }}
+                        />
+                    </div>
                     {hasEcoLabel2Preview && (
                         <img
                             src={data.ecolabel2}
@@ -234,19 +276,8 @@ export default function ProductForm({ data, onChange, onRemove }) {
                             style={{ maxWidth: "200px", margin: "8px 0" }}
                         />
                     )}
-                    <button
-                        type="button"
-                        onClick={() =>
-                            window.open(
-                                "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays.html",
-                                "_blank"
-                            )
-                        }
-                    >
-                        Crit Green
-                    </button>
 
-                    <label className="form-label">Title 2</label>
+                    <label className="form-label">Title</label>
                     <input
                         type="text"
                         ref={title2InputRef}
@@ -255,7 +286,7 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         maxLength={66}
                     />
 
-                    <label className="form-label">Text 2</label>
+                    <label className="form-label">Text</label>
                     <input
                         type="text"
                         ref={text2InputRef}
@@ -264,12 +295,26 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         maxLength={85}
                     />
 
-                    <label className="form-label">Label 2</label>
-                    <input
-                        type="text"
-                        value={data.label2 || ""}
-                        onChange={updateField("label2")}
-                    />
+                    <label className="form-label">Label</label>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                        <button
+                            type="button"
+                            onClick={() =>
+                                window.open(
+                                    "https://imgnews.raja-group.com/00-structure/label/_label-all-pays.html",
+                                    "_blank"
+                                )
+                            }
+                        >
+                            Select and paste
+                        </button>
+                        <input
+                            type="text"
+                            value={data.label2 || ""}
+                            onChange={updateField("label2")}
+                            style={{ flex: 1 }}
+                        />
+                    </div>
                     {hasLabel2Preview && (
                         <img
                             src={data.label2}
@@ -277,60 +322,27 @@ export default function ProductForm({ data, onChange, onRemove }) {
                             style={{ maxWidth: "200px", margin: "8px 0" }}
                         />
                     )}
-                    <button
-                        type="button"
-                        onClick={() =>
-                            window.open(
-                                "https://imgnews.raja-group.com/00-structure/label/_label-all-pays.html",
-                                "_blank"
-                            )
-                        }
-                    >
-                        Label
-                    </button>
 
-                    <label className="form-label">From 2 ?</label>
-                    <div role="radiogroup">
-                        <label htmlFor="fromYes2">Yes</label>
-                        <input
-                            type="radio"
-                            id="fromYes2"
-                            name="from2"
-                            value="From"
-                            checked={data.from2 === "From"}
-                            onChange={updateField("from2")}
-                        />
-                        <label htmlFor="fromNo2">No</label>
-                        <input
-                            type="radio"
-                            id="fromNo2"
-                            name="from2"
-                            value=""
-                            checked={data.from2 === ""}
-                            onChange={updateField("from2")}
-                        />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', margin: '8px 0' }}>
+                        <label className="form-label" style={{ marginBottom: 0 }}>From ?</label>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                            <input
+                                type="checkbox"
+                                id="fromNo2"
+                                checked={data.from2 === ""}
+                                onChange={(e) => {
+                                    if (e.target.checked) {
+                                        onChange({ ...data, from2: "", fromPrice2: "" });
+                                    } else {
+                                        onChange({ ...data, from2: "From", fromPrice2: fromPriceOptions[language] });
+                                    }
+                                }}
+                            />
+                            <label htmlFor="fromNo2">No</label>
+                        </div>
                     </div>
 
-                    <label htmlFor="from-price2" className="form-label">From Price 2</label>
-                    <select
-                        id="from-price2"
-                        value={data.fromPrice2 || ""}
-                        onChange={updateField("fromPrice2")}
-                    >
-                        <option value="">---Please choose an option---</option>
-                        <option value="Ab">Ab</option>
-                        <option value="Dès">Dès</option>
-                        <option value="Již">Již</option>
-                        <option value="Fra">Fra</option>
-                        <option value="Już">Już</option>
-                        <option value="Desde">Desde</option>
-                        <option value="Från">Från</option>
-                        <option value="Už">Už</option>
-                        <option value="From">From</option>
-                        <option value="A partir de">A partir de</option>
-                    </select>
-
-                    <label htmlFor="crossed-out-price2" className="form-label">Crossed Out Price 2</label>
+                    <label htmlFor="crossed-out-price2" className="form-label">Crossed Out Price</label>
                     <input
                         type="text"
                         id="crossed-out-price2"
@@ -338,14 +350,14 @@ export default function ProductForm({ data, onChange, onRemove }) {
                         onChange={updateField("crossedOutPrice2")}
                     />
 
-                    <label className="form-label">Price 2</label>
+                    <label className="form-label">Price</label>
                     <input
                         type="text"
                         value={data.price2 || ""}
                         onChange={updateField("price2")}
                     />
 
-                    <label className="form-label">Unit 2</label>
+                    <label className="form-label">Unit</label>
                     <input
                         type="text"
                         value={data.unit2 || ""}

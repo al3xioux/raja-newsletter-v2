@@ -68,7 +68,8 @@ h1 {
 /* #corps = la zone de formulaires, prend la place (flex:1) */
 #corps {
     flex: 1;
-    min-height: 70vh;
+    min-height: 74vh;
+    max-height: 74vh;
     /* ou 68vh comme vous voulez */
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -153,6 +154,15 @@ button[type="button"] {
 
 button[type="button"]:hover {
     background-color: #5929F4;
+}
+
+.country-select-button {
+    cursor: pointer;
+    padding: 5px 10px;
+    background: #f8f8f8 ;
+    display: block;
+    margin-bottom: 5px;
+    color: white;
 }
 
 /* Petits ajustements .product-group .form-product etc. */
