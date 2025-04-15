@@ -303,12 +303,7 @@ export let footerES = `<!-- ESG0323 -->
 	</tr>
 </table>`
 
-export let headerES = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerES = `
                 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -680,12 +675,7 @@ export let footerUK = `<!-- UKG0322 -->
 	</tr>
 </table>`
 
-export let headerUK = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerUK = `
     
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -1053,14 +1043,7 @@ export let footerFR = `<!-- FRG0424 -->
 	</tr>
 </table>`
 
-export let headerFR = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr>
-		<td style="display:none; font-size:12px;">
-			header_text
-			<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td>
-	</tr>
-	<tr>
-		<td align="center">
+export let headerFR = `
 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -1122,12 +1105,8 @@ export let headerFR = `<table class="resize" width="100%" border="0" cellspacing
 
 //          <----------------------------------------Autriche---------------------------------------->
 
-export let headerAT = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center"><!--HEADER-->
+export let headerAT = `
+<!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
 	<tr><td style="font-size:0; display:block; height:15px;">&nbsp;</td></tr>
 	<tr>
@@ -1489,12 +1468,7 @@ export let footerAT = `<!-- ATG0323 -->
 
 //          <----------------------------------------BFL---------------------------------------->
 
-export let headerBFL = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center"> 
+export let headerBFL = ` 
 		<!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
 	<tr><td style="font-size:0; display:block; height:15px;">&nbsp;</td></tr>
@@ -1858,12 +1832,7 @@ export let footerBFL = `<!-- BFLG0323 -->
 
 //          <----------------------------------------BFR---------------------------------------->
 
-export let headerBFR = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerBFR = `
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
 	<tr><td style="font-size:0; display:block; height:15px;">&nbsp;</td></tr>
@@ -2227,14 +2196,7 @@ export let footerBFR = `
 
 //          <----------------------------------------CDE---------------------------------------->
 
-export let headerCDE = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr>
-		<td style="display:none; font-size:12px;">
-			header_text
-			<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td>
-	</tr>
-	<tr>
-		<td align="center">
+export let headerCDE = `
 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -2590,12 +2552,7 @@ export let footerCDE = `<!-- CDEG0323 -->
 
 //          <----------------------------------------CFR---------------------------------------->
 
-export let headerCFR = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerCFR = `
                 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -2934,12 +2891,7 @@ export let footerCFR = `<!-- CFRG0323 -->
 
 //          <----------------------------------------CZ---------------------------------------->
 
-export let headerCZ = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		Evropská jednička v balení
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerCZ = `
         
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -3298,12 +3250,7 @@ export let footerCZ = `<!-- CZ-G0323 -->
 
 //          <----------------------------------------Allemagne---------------------------------------->
 
-export let headerDE = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerDE = `
 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -3674,12 +3621,7 @@ export let footerDE = `<!-- DEG0323 -->
 
 //          <----------------------------------------Dänemark---------------------------------------->
 
-export let headerDK = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerDK = `
 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -4042,12 +3984,7 @@ export let footerDK = `<!-- DK-G0323 -->
 
 //          <----------------------------------------Hongrie---------------------------------------->
 
-export let headerHU = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerHU = `
 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -4326,12 +4263,7 @@ export let footerHU = `<!-- HUP1022 -->
 
 //          <----------------------------------------Italie---------------------------------------->
 
-export let headerIT = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerIT = `
 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -4699,12 +4631,7 @@ SIAMO IL FORNITORE A CUI AFFIDARTI</a>
 
 //          <----------------------------------------Pays-bas---------------------------------------->
 
-export let headerNL = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerNL = `
     
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -5069,12 +4996,7 @@ export let footerNL = `<!-- NLG0323 -->
 
 //          <----------------------------------------Norvège---------------------------------------->
 
-export let headerNO = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerNO = `
 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -5435,12 +5357,7 @@ export let footerNO = `<!-- NO-G0323 -->
 
 //          <----------------------------------------Pologne---------------------------------------->
 
-export let headerPL = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerPL = `
 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -5808,12 +5725,7 @@ export let footerPL = `<!-- PL-G0923 -->
 
 //          <----------------------------------------Portugal---------------------------------------->
 
-export let headerPT = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		RAJA, o líder europeu na distribuição de embalagens, consumíveis e equipamentos para as empresas
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerPT = `
     
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
@@ -6166,14 +6078,8 @@ export let footerPT = `<!-- PT P0922 -->
 
 //          <----------------------------------------Suède---------------------------------------->
 
-export let headerSE = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerSE = `
 
-    <!--HEADER 70 ans-->
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">
 	<tr><td style="font-size:0; display:block; height:15px;">&nbsp;</td></tr>
@@ -6516,12 +6422,7 @@ export let footerSE = `<!-- SE-G0923 -->
 
 //          <----------------------------------------Slovaquie---------------------------------------->
 
-export let headerSK = `<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
-	<tr><td style="display:none; font-size:12px;">
-		header_text
-		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
-	<tr>
-		<td align="center">
+export let headerSK = `
 
 <!--HEADER-->
 <table class="resize" align="center" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#276EF1" style="background:linear-gradient(45deg, #6121F5 0%, #276EF1 100%);">

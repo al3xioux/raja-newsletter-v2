@@ -13,6 +13,7 @@ export default function NewsletterCreation() {
     const [renderedForms, setRenderedForms] = useState([]);
     const [language, setLanguage] = useState("");
     const [documentTitle, setDocumentTitle] = useState("");
+    const [headerTexte, setHeaderTexte] = useState("");
 
     // Ajoute un bloc
     const addForm = (type) => {
@@ -46,15 +47,18 @@ export default function NewsletterCreation() {
         setDocumentTitle(e.target.value);
     };
 
+    const handleHeaderTexteChange = (e) => {
+        setHeaderTexte(e.target.value);
+    };
+
     // Génération du HTML
     const handleGenerateHTML = () => {
         // Choix du header/footer
         const header = HEADERS[language] || "";
         const footer = FOOTERS[language] || "";
 
-        // On appelle generateHtml en passant le titre
-        // (on peut passer un 3eme ou 4eme paramètre "docTitle" si la fonction le gère).
-        const html = generateHtml(renderedForms, header, footer, documentTitle);
+        // On appelle generateHtml en passant le titre et le headerTexte
+        const html = generateHtml(renderedForms, header, footer, documentTitle, headerTexte);
 
         // Nom de fichier : si user n'a rien saisi, on met "newsletter".
         const fileName = documentTitle.trim() ? documentTitle.trim() : "newsletter";
@@ -73,6 +77,7 @@ export default function NewsletterCreation() {
             setRenderedForms([]);
             setLanguage("");
             setDocumentTitle("");
+            setHeaderTexte("");
         }
     };
 
@@ -90,6 +95,14 @@ export default function NewsletterCreation() {
                     onChange={handleDocumentTitleChange}
                 />
 
+                <label htmlFor="headerTexte">Header Text :</label>
+                    <input
+                        type="text"
+                        id="headerTexte"
+                        value={headerTexte}
+                        onChange={handleHeaderTexteChange}
+                    />
+                
                 <label htmlFor="language">
                     <button
                         type="button"
@@ -110,7 +123,7 @@ export default function NewsletterCreation() {
                             width: "100px" 
                         }}
                     >
-                        <option value="">-----------Please choose an option-----------</option>
+                        <option value="">--Please choose an option--</option>
                         <option value="fr">France</option>
                         <option value="es">Espagne</option>
                         <option value="uk">Royaume-Uni</option>

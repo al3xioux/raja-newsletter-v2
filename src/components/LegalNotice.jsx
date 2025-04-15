@@ -11,11 +11,12 @@ export default function LegalNotice({ data, onChange, onRemove }) {
 
             <label htmlFor="legal-notice" className="form-label">Legal Notice</label>
             <br></br>
-            <input
-                type="text"
+            <textarea
                 id="legal_notice"
                 value={data.legalNotice || ""}
                 onChange={handleChange}
+                rows="6"
+                style={{ width: '100%', resize: 'vertical' }}
             />
         </div>
     );

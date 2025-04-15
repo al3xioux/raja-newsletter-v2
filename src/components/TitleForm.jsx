@@ -11,10 +11,6 @@ export default function TitleForm({ data, onChange, onRemove }) {
         onChange({ ...data, textSize: e.target.value });
     };
 
-    const handleTextBoldChange = (e) => {
-        onChange({ ...data, bold: e.target.value });
-    };
-
     const handleTextColorChange = (e) => {
         onChange({ ...data, textColor: e.target.value });
     };
@@ -33,37 +29,17 @@ export default function TitleForm({ data, onChange, onRemove }) {
             />
             <br></br>
 
-            <label className="form-label" htmlFor="textsize">Text size</label>
+            <label className="form-label" htmlFor="textsize">Taille du texte</label>
             <br></br>
-            <input
-                type="text"
+            <select
                 id="textsize"
-                value={data.textSize || ""}
+                value={data.textSize || "22px"}
                 onChange={handleTextSizeChange}
-            />
+            >
+                <option value="22px">22px</option>
+                <option value="18px">18px</option>
+            </select>
             <br></br>
-
-            <label className="form-label" htmlFor="textbold">Text bold</label>
-            <section role="radiogroup">
-                <label htmlFor="boldYes">Yes</label>
-                <input
-                    type="radio"
-                    id="boldYes"
-                    name="bold"
-                    value="1000"
-                    checked={data.bold === "1000"}
-                    onChange={handleTextBoldChange}
-                />
-                <label htmlFor="boldNo">No</label>
-                <input
-                    type="radio"
-                    id="boldNo"
-                    name="bold"
-                    value="500"
-                    checked={data.bold === "500"}
-                    onChange={handleTextBoldChange}
-                />
-            </section>
 
             <label className="form-label" htmlFor="textcolor">Text color</label>
             <br></br>

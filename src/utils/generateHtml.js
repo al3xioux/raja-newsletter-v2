@@ -1,6 +1,6 @@
 // src/utils/generateHtml.js
 
-export default function generateHtml(blocks, header = "", footer = "", docTitle = "Newsletter") {
+export default function generateHtml(blocks, header = "", footer = "", docTitle = "Newsletter", headerTexte = "") {
 
 // Début du document
 let htmlContent = `
@@ -127,6 +127,12 @@ img { -ms-interpolation-mode: bicubic; border:0; display:block!important; }
 </style>
 </head>
 <body>
+<table class="resize" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EDF1F7;">
+	<tr><td style="display:none; font-size:12px;">
+		${headerTexte}
+		<span style="display:none;max-height:0px;overflow:hidden"> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌<wbr> ‌ ‌ ‌ ‌ ‌ ‌</span></td></tr>
+	<tr>
+		<td align="center">
 ${header}
 `;
 
@@ -504,7 +510,7 @@ blocks.forEach((item) => {
 							<table class="resize_w90" align="center" width="540" border="0" cellspacing="0"
 								cellpadding="0">
 								<tr>
-									<td align="center" style="font-size: ${item.data.textSize || "22px"}; font-weight:${item.data.bold || "800"}; color:${item.data.textColor || "#656F84"};">
+									<td align="center" style="font-size: ${item.data.textSize || "22px"}; font-weight:800; color:${item.data.textColor || "#656F84"};">
 										${item.data.bigTitle || ""}
 									</td>
 								</tr>
