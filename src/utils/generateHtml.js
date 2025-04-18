@@ -157,7 +157,7 @@ blocks.forEach((item) => {
 						<td>
 							<table class="resize" width="298" border="0" align="center" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF;">
 								<tr>
-									<td style="font-size:0;"><a href="${item.data.one_productLink || "#"} target="_blank"><img class="resize_w90" src="https://raja.scene7.com/is/image/Raja?template=TA-picture-150&$image=${item.data.one_image || ""}&hei=368&wid=492&resMode=sharp4" width="297" height="272" style="display:block; padding:0; margin:0 auto; border:0; width:297px; height:272px;" alt="${item.data.one_title || ""}"/></a></td>
+									<td style="font-size:0;"><a href="${item.data.one_productLink || "#"}" target="_blank"><img class="resize_w90" src="https://raja.scene7.com/is/image/Raja?template=TA-picture-200-XL&$image=${item.data.one_image || ""}&hei=600&wid=656&resMode=sharp4" width="297" height="272" style="display:block; padding:0; margin:0 auto; border:0; width:297px; height:272px;" alt="${item.data.one_title || ""}"/></a></td>
 								</tr>
 							</table>
 						</td>
@@ -198,8 +198,8 @@ blocks.forEach((item) => {
 								<tr>
 									<td align="left" style="font-size:14px; color:#FE9600;">
 									<a class="resize_text16" href="${item.data.one_productLink || "#"}" target="_blank" style="color:#FE9600; text-decoration:none;">${item.data.one_fromPrice || ""}<br>
-									<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.one_crossedOutPrice ? `&nbsp;${item.data.one_crossedOutPrice}&nbsp;` : ""}</strike></span>&nbsp;
-										<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">&nbsp;${item.data.one_price || ""}</span>&nbsp;<br>
+									<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.one_crossedOutPrice ? `${item.data.one_crossedOutPrice}&nbsp;` : ""}</strike></span>
+										<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.one_price || ""}</span>&nbsp;<br>
 										${item.data.one_unit || ""}
 									</a>
 									</td>
@@ -258,7 +258,7 @@ blocks.forEach((item) => {
 																<td style="font-size:0;"><a
 																		href="${item.data.productLink1 || "#"}"
 																		target="_blank"><img class="resize"
-																			src="https://raja.scene7.com/is/image/Raja?template=TA-picture-150&$image=${item.data.image1 || ""}&hei=368&wid=492&resMode=sharp4"
+																			src="https://raja.scene7.com/is/image/Raja?template=TA-picture-200&$image=${item.data.image1 || ""}&hei=490&wid=656&resMode=sharp4"
 																			width="297" height="222"
 																			style="display:block; padding:0; margin:0; border:0; width:297px; height:222px;"
 																			alt="${item.data.title1 || ""}" /></a>
@@ -346,7 +346,7 @@ blocks.forEach((item) => {
 																		target="_blank"
 																		style="font-size:14px; color:#FE9600; text-decoration:none;">
 																		${item.data.fromPrice1 || ""}<br>
-																		<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice1 ? `&nbsp;${item.data.crossedOutPrice1}&nbsp;` : ""}</strike></span>&nbsp;
+																		<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice1 ? `${item.data.crossedOutPrice1}&nbsp;` : ""}</strike></span>
 																		<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price1 || ""}</span>&nbsp;<br>
 																		${item.data.unit1 || ""}
 																	</a>
@@ -384,7 +384,7 @@ blocks.forEach((item) => {
 													<td style="font-size:0;"><a
 															href="${item.data.productLink2 || "#"}"
 															target="_blank"><img class="resize"
-																src="https://raja.scene7.com/is/image/Raja?template=TA-picture-150&$image=${item.data.image2 || ""}&hei=368&wid=492&resMode=sharp4"
+																src="https://raja.scene7.com/is/image/Raja?template=TA-picture-200&$image=${item.data.image2 || ""}&hei=490&wid=656&resMode=sharp4"
 																width="297" height="222"
 																style="display:block; padding:0; margin:0; border:0; width:297px; height:222px;"
 																alt="${item.data.title2 || ""}" /></a>
@@ -464,7 +464,7 @@ blocks.forEach((item) => {
 																target="_blank"
 																style="font-size:14px; color:#FE9600; text-decoration:none;">
 																${item.data.fromPrice2 || ""}<br>
-																<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice2 ? `&nbsp;${item.data.crossedOutPrice2}&nbsp;` : ""}</strike></span>&nbsp;
+																<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice2 ? `${item.data.crossedOutPrice2}&nbsp;` : ""}</strike></span>
 																<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price2 || ""}</span>&nbsp;<br>
 																${item.data.unit2 || ""}
 															</a>

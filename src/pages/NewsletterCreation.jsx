@@ -175,8 +175,8 @@ export default function NewsletterCreation() {
                 </div>
 
                 <div id="create-button">
-                    <button type="button" onClick={() => addForm("title")}>Add Title</button>
                     <button type="button" onClick={() => addForm("banner")}>Add Banner</button>
+                    <button type="button" onClick={() => addForm("title")}>Add Title</button>
                     <button type="button" onClick={() => addForm("oneProduct")}>Add 1 Product</button>
                     <button type="button" onClick={() => addForm("product")}>Add 2 Products</button>
                     <button type="button" onClick={() => addForm("cta")}>Add CTA</button>
