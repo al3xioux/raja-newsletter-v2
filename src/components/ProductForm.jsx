@@ -124,7 +124,7 @@ export default function ProductForm({ data, onChange, onRemove, language }) {
                             type="button"
                             onClick={() =>
                                 window.open(
-                                    "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays.html",
+                                    "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays_app.html",
                                     "_blank"
                                 )
                             }
@@ -170,7 +170,7 @@ export default function ProductForm({ data, onChange, onRemove, language }) {
                             type="button"
                             onClick={() =>
                                 window.open(
-                                    "https://imgnews.raja-group.com/00-structure/label/_label-all-pays.html",
+                                    "https://imgnews.raja-group.com/00-structure/label/_label-all-pays_app.html",
                                     "_blank"
                                 )
                             }
@@ -255,7 +255,7 @@ export default function ProductForm({ data, onChange, onRemove, language }) {
                             type="button"
                             onClick={() =>
                                 window.open(
-                                    "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays.html",
+                                    "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays_app.html",
                                     "_blank"
                                 )
                             }
@@ -301,7 +301,7 @@ export default function ProductForm({ data, onChange, onRemove, language }) {
                             type="button"
                             onClick={() =>
                                 window.open(
-                                    "https://imgnews.raja-group.com/00-structure/label/_label-all-pays.html",
+                                    "https://imgnews.raja-group.com/00-structure/label/_label-all-pays_app.html",
                                     "_blank"
                                 )
                             }
