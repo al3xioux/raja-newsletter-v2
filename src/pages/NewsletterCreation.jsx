@@ -11,7 +11,7 @@ import { HEADERS, FOOTERS } from "../data/var"; // par exemple si vous avez un o
 
 export default function NewsletterCreation() {
     const [renderedForms, setRenderedForms] = useState([]);
-    const [language, setLanguage] = useState("");
+    const [language, setLanguage] = useState("fr");
     const [documentTitle, setDocumentTitle] = useState("");
     const [headerTexte, setHeaderTexte] = useState("");
 
@@ -147,10 +147,9 @@ export default function NewsletterCreation() {
                             width: "100px" 
                         }}
                     >
-                        <option value="">--Please choose an option--</option>
                         <option value="fr">France</option>
-                        <option value="es">Espagne</option>
                         <option value="uk">Royaume-Uni</option>
+                        <option value="es">Espagne</option>
                         <option value="de">Allemagne</option>
                         <option value="at">Autriche</option>
                         <option value="bfl">Belgique FL</option>
