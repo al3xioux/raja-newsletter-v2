@@ -48,19 +48,19 @@ export default function OneProductForm({ data, onChange, onRemove, onMoveUp, onM
         }
     }, []);
 
-    // Ajouter un useEffect pour mettre à jour le fromPrice
+    // Add a useEffect to update the fromPrice
     useEffect(() => {
         if (language && fromPriceOptions[language] && data.one_from !== "") {
             onChange({ ...data, one_fromPrice: fromPriceOptions[language] });
         }
     }, [language, data.one_from]);
 
-    // Helper pour mettre à jour un champ
+    // Helper to update a field
     const updateField = (field) => (e) => {
         onChange({ ...data, [field]: e.target.value });
     };
 
-    // Vérifie si l'URL de l'ecolabel est valide (commence par http)
+    // Check if the ecolabel URL is valid (starts with http)
     const hasEcoLabelPreview =
         data.one_ecolabel &&
         (data.one_ecolabel.startsWith("http://") || data.one_ecolabel.startsWith("https://"));

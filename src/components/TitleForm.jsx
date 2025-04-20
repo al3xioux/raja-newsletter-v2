@@ -33,7 +33,7 @@ export default function TitleForm({ data, onChange, onRemove, onMoveUp, onMoveDo
             />
             <br></br>
 
-            <label className="form-label" htmlFor="textsize">Taille du texte</label>
+            <label className="form-label" htmlFor="textsize">Text size</label>
             <br></br>
             <select
                 id="textsize"

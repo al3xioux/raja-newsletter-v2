@@ -107,267 +107,269 @@ export default function ProductForm({ data, onChange, onRemove, onMoveUp, onMove
                     <button type="button" className="delete-btn" onClick={onRemove} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i className="fa-solid fa-delete-left"></i></button>
                 </div>
 
-                <section className="product-line">
-                    <label className="form-label">Product Link</label>
-                    <input
-                        type="text"
-                        value={data.productLink1 || ""}
-                        onChange={updateField("productLink1")}
-                    />
-
-                    <label className="form-label">Image</label>
-                    <input
-                        type="text"
-                        value={data.image1 || ""}
-                        onChange={updateField("image1")}
-                    />
-
-                    <label className="form-label">Eco-Label</label>
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
-                        <button
-                            type="button"
-                            onClick={() =>
-                                window.open(
-                                    "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays_app.html",
-                                    "_blank"
-                                )
-                            }
-                        >
-                            Select and paste
-                        </button>
+                <div className="product-columns-container">
+                    <section className="product-line">
+                        <label className="form-label">Product Link</label>
                         <input
                             type="text"
-                            value={data.ecolabel1 || ""}
-                            onChange={updateField("ecolabel1")}
-                            style={{ flex: 1 }}
+                            value={data.productLink1 || ""}
+                            onChange={updateField("productLink1")}
                         />
-                    </div>
-                    {hasEcoLabel1Preview && (
-                        <img
-                            src={data.ecolabel1}
-                            alt="Eco-label preview"
-                            style={{ maxWidth: "200px", margin: "8px 0" }}
-                        />
-                    )}
 
-                    <label className="form-label">Title</label>
-                    <input
-                        type="text"
-                        ref={title1InputRef}
-                        value={data.title1 || ""}
-                        onChange={updateField("title1")}
-                        maxLength={66}
-                    />
-
-                    <label className="form-label">Text</label>
-                    <input
-                        type="text"
-                        ref={text1InputRef}
-                        value={data.text1 || ""}
-                        onChange={updateField("text1")}
-                        maxLength={85}
-                    />
-
-                    <label className="form-label">Label</label>
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
-                        <button
-                            type="button"
-                            onClick={() =>
-                                window.open(
-                                    "https://imgnews.raja-group.com/00-structure/label/_label-all-pays_app.html",
-                                    "_blank"
-                                )
-                            }
-                        >
-                            Select and paste
-                        </button>
+                        <label className="form-label">Image</label>
                         <input
                             type="text"
-                            value={data.label1 || ""}
-                            onChange={updateField("label1")}
-                            style={{ flex: 1 }}
+                            value={data.image1 || ""}
+                            onChange={updateField("image1")}
                         />
-                    </div>
-                    {hasLabel1Preview && (
-                        <img
-                            src={data.label1}
-                            alt="Label preview"
-                            style={{ maxWidth: "200px", margin: "8px 0" }}
-                        />
-                    )}
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', margin: '8px 0' }}>
-                        <label className="form-label" style={{ marginBottom: 0 }}>From ?</label>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                        <label className="form-label">Eco-Label</label>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    window.open(
+                                        "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays_app.html",
+                                        "_blank"
+                                    )
+                                }
+                            >
+                                Select and paste
+                            </button>
                             <input
-                                type="checkbox"
-                                id="fromNo1"
-                                checked={data.from1 === ""}
-                                onChange={(e) => {
-                                    if (e.target.checked) {
-                                        onChange({ ...data, from1: "", fromPrice1: "" });
-                                    } else {
-                                        onChange({ ...data, from1: "From", fromPrice1: fromPriceOptions[language] });
-                                    }
-                                }}
+                                type="text"
+                                value={data.ecolabel1 || ""}
+                                onChange={updateField("ecolabel1")}
+                                style={{ flex: 1 }}
                             />
-                            <label htmlFor="fromNo1">No</label>
                         </div>
-                    </div>
+                        {hasEcoLabel1Preview && (
+                            <img
+                                src={data.ecolabel1}
+                                alt="Eco-label preview"
+                                style={{ maxWidth: "200px", margin: "8px 0" }}
+                            />
+                        )}
 
-                    <label htmlFor="crossed-out-price1" className="form-label">Crossed Out Price</label>
-                    <input
-                        type="text"
-                        id="crossed-out-price1"
-                        value={data.crossedOutPrice1 || ""}
-                        onChange={updateField("crossedOutPrice1")}
-                    />
-                    
-                    <label className="form-label">Price</label>
-                    <input
-                        type="text"
-                        value={data.price1 || ""}
-                        onChange={updateField("price1")}
-                    />
-
-                    <label className="form-label">Unit</label>
-                    <input
-                        type="text"
-                        value={data.unit1 || ""}
-                        onChange={updateField("unit1")}
-                    />
-                </section>
-
-                <section className="product-line">
-                    <label className="form-label">Product Link</label>
-                    <input
-                        type="text"
-                        value={data.productLink2 || ""}
-                        onChange={updateField("productLink2")}
-                    />
-
-                    <label className="form-label">Image</label>
-                    <input
-                        type="text"
-                        value={data.image2 || ""}
-                        onChange={updateField("image2")}
-                    />
-
-                    <label className="form-label">Eco-Label</label>
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
-                        <button
-                            type="button"
-                            onClick={() =>
-                                window.open(
-                                    "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays_app.html",
-                                    "_blank"
-                                )
-                            }
-                        >
-                            Select and paste
-                        </button>
+                        <label className="form-label">Title</label>
                         <input
                             type="text"
-                            value={data.ecolabel2 || ""}
-                            onChange={updateField("ecolabel2")}
-                            style={{ flex: 1 }}
+                            ref={title1InputRef}
+                            value={data.title1 || ""}
+                            onChange={updateField("title1")}
+                            maxLength={66}
                         />
-                    </div>
-                    {hasEcoLabel2Preview && (
-                        <img
-                            src={data.ecolabel2}
-                            alt="Eco-label preview"
-                            style={{ maxWidth: "200px", margin: "8px 0" }}
-                        />
-                    )}
 
-                    <label className="form-label">Title</label>
-                    <input
-                        type="text"
-                        ref={title2InputRef}
-                        value={data.title2 || ""}
-                        onChange={updateField("title2")}
-                        maxLength={66}
-                    />
-
-                    <label className="form-label">Text</label>
-                    <input
-                        type="text"
-                        ref={text2InputRef}
-                        value={data.text2 || ""}
-                        onChange={updateField("text2")}
-                        maxLength={85}
-                    />
-
-                    <label className="form-label">Label</label>
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
-                        <button
-                            type="button"
-                            onClick={() =>
-                                window.open(
-                                    "https://imgnews.raja-group.com/00-structure/label/_label-all-pays_app.html",
-                                    "_blank"
-                                )
-                            }
-                        >
-                            Select and paste
-                        </button>
+                        <label className="form-label">Text</label>
                         <input
                             type="text"
-                            value={data.label2 || ""}
-                            onChange={updateField("label2")}
-                            style={{ flex: 1 }}
+                            ref={text1InputRef}
+                            value={data.text1 || ""}
+                            onChange={updateField("text1")}
+                            maxLength={85}
                         />
-                    </div>
-                    {hasLabel2Preview && (
-                        <img
-                            src={data.label2}
-                            alt="Label preview"
-                            style={{ maxWidth: "200px", margin: "8px 0" }}
-                        />
-                    )}
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', margin: '8px 0' }}>
-                        <label className="form-label" style={{ marginBottom: 0 }}>From ?</label>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                        <label className="form-label">Label</label>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    window.open(
+                                        "https://imgnews.raja-group.com/00-structure/label/_label-all-pays_app.html",
+                                        "_blank"
+                                    )
+                                }
+                            >
+                                Select and paste
+                            </button>
                             <input
-                                type="checkbox"
-                                id="fromNo2"
-                                checked={data.from2 === ""}
-                                onChange={(e) => {
-                                    if (e.target.checked) {
-                                        onChange({ ...data, from2: "", fromPrice2: "" });
-                                    } else {
-                                        onChange({ ...data, from2: "From", fromPrice2: fromPriceOptions[language] });
-                                    }
-                                }}
+                                type="text"
+                                value={data.label1 || ""}
+                                onChange={updateField("label1")}
+                                style={{ flex: 1 }}
                             />
-                            <label htmlFor="fromNo2">No</label>
                         </div>
-                    </div>
+                        {hasLabel1Preview && (
+                            <img
+                                src={data.label1}
+                                alt="Label preview"
+                                style={{ maxWidth: "200px", margin: "8px 0" }}
+                            />
+                        )}
 
-                    <label htmlFor="crossed-out-price2" className="form-label">Crossed Out Price</label>
-                    <input
-                        type="text"
-                        id="crossed-out-price2"
-                        value={data.crossedOutPrice2 || ""}
-                        onChange={updateField("crossedOutPrice2")}
-                    />
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', margin: '8px 0' }}>
+                            <label className="form-label" style={{ marginBottom: 0 }}>From ?</label>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                                <input
+                                    type="checkbox"
+                                    id="fromNo1"
+                                    checked={data.from1 === ""}
+                                    onChange={(e) => {
+                                        if (e.target.checked) {
+                                            onChange({ ...data, from1: "", fromPrice1: "" });
+                                        } else {
+                                            onChange({ ...data, from1: "From", fromPrice1: fromPriceOptions[language] });
+                                        }
+                                    }}
+                                />
+                                <label htmlFor="fromNo1">No</label>
+                            </div>
+                        </div>
 
-                    <label className="form-label">Price</label>
-                    <input
-                        type="text"
-                        value={data.price2 || ""}
-                        onChange={updateField("price2")}
-                    />
+                        <label htmlFor="crossed-out-price1" className="form-label">Crossed Out Price</label>
+                        <input
+                            type="text"
+                            id="crossed-out-price1"
+                            value={data.crossedOutPrice1 || ""}
+                            onChange={updateField("crossedOutPrice1")}
+                        />
+                        
+                        <label className="form-label">Price</label>
+                        <input
+                            type="text"
+                            value={data.price1 || ""}
+                            onChange={updateField("price1")}
+                        />
 
-                    <label className="form-label">Unit</label>
-                    <input
-                        type="text"
-                        value={data.unit2 || ""}
-                        onChange={updateField("unit2")}
-                    />
-                </section>
+                        <label className="form-label">Unit</label>
+                        <input
+                            type="text"
+                            value={data.unit1 || ""}
+                            onChange={updateField("unit1")}
+                        />
+                    </section>
+
+                    <section className="product-line">
+                        <label className="form-label">Product Link</label>
+                        <input
+                            type="text"
+                            value={data.productLink2 || ""}
+                            onChange={updateField("productLink2")}
+                        />
+
+                        <label className="form-label">Image</label>
+                        <input
+                            type="text"
+                            value={data.image2 || ""}
+                            onChange={updateField("image2")}
+                        />
+
+                        <label className="form-label">Eco-Label</label>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    window.open(
+                                        "https://imgnews.raja-group.com/00-structure/crit-green/_crit-green-all-pays_app.html",
+                                        "_blank"
+                                    )
+                                }
+                            >
+                                Select and paste
+                            </button>
+                            <input
+                                type="text"
+                                value={data.ecolabel2 || ""}
+                                onChange={updateField("ecolabel2")}
+                                style={{ flex: 1 }}
+                            />
+                        </div>
+                        {hasEcoLabel2Preview && (
+                            <img
+                                src={data.ecolabel2}
+                                alt="Eco-label preview"
+                                style={{ maxWidth: "200px", margin: "8px 0" }}
+                            />
+                        )}
+
+                        <label className="form-label">Title</label>
+                        <input
+                            type="text"
+                            ref={title2InputRef}
+                            value={data.title2 || ""}
+                            onChange={updateField("title2")}
+                            maxLength={66}
+                        />
+
+                        <label className="form-label">Text</label>
+                        <input
+                            type="text"
+                            ref={text2InputRef}
+                            value={data.text2 || ""}
+                            onChange={updateField("text2")}
+                            maxLength={85}
+                        />
+
+                        <label className="form-label">Label</label>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '8px 0' }}>
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    window.open(
+                                        "https://imgnews.raja-group.com/00-structure/label/_label-all-pays_app.html",
+                                        "_blank"
+                                    )
+                                }
+                            >
+                                Select and paste
+                            </button>
+                            <input
+                                type="text"
+                                value={data.label2 || ""}
+                                onChange={updateField("label2")}
+                                style={{ flex: 1 }}
+                            />
+                        </div>
+                        {hasLabel2Preview && (
+                            <img
+                                src={data.label2}
+                                alt="Label preview"
+                                style={{ maxWidth: "200px", margin: "8px 0" }}
+                            />
+                        )}
+
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', margin: '8px 0' }}>
+                            <label className="form-label" style={{ marginBottom: 0 }}>From ?</label>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                                <input
+                                    type="checkbox"
+                                    id="fromNo2"
+                                    checked={data.from2 === ""}
+                                    onChange={(e) => {
+                                        if (e.target.checked) {
+                                            onChange({ ...data, from2: "", fromPrice2: "" });
+                                        } else {
+                                            onChange({ ...data, from2: "From", fromPrice2: fromPriceOptions[language] });
+                                        }
+                                    }}
+                                />
+                                <label htmlFor="fromNo2">No</label>
+                            </div>
+                        </div>
+
+                        <label htmlFor="crossed-out-price2" className="form-label">Crossed Out Price</label>
+                        <input
+                            type="text"
+                            id="crossed-out-price2"
+                            value={data.crossedOutPrice2 || ""}
+                            onChange={updateField("crossedOutPrice2")}
+                        />
+
+                        <label className="form-label">Price</label>
+                        <input
+                            type="text"
+                            value={data.price2 || ""}
+                            onChange={updateField("price2")}
+                        />
+
+                        <label className="form-label">Unit</label>
+                        <input
+                            type="text"
+                            value={data.unit2 || ""}
+                            onChange={updateField("unit2")}
+                        />
+                    </section>
+                </div>
             </form>
         </section>
     );
