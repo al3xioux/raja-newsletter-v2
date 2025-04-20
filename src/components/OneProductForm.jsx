@@ -23,7 +23,7 @@ const fromPriceOptions = {
     sk: "Už"
 };
 
-export default function OneProductForm({ data, onChange, onRemove, language }) {
+export default function OneProductForm({ data, onChange, onRemove, onMoveUp, onMoveDown, language }) {
     const titleInputRef = useRef(null);
     const textInputRef = useRef(null);
 
@@ -73,7 +73,11 @@ export default function OneProductForm({ data, onChange, onRemove, language }) {
     return (
         <section className="product-group">
             <form className="form-product">
-            <button type="button" className="delete-btn" onClick={onRemove} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i class="fa-solid fa-delete-left"></i></button>
+                <div>
+                    <button type="button" className="move-btn" onClick={onMoveUp} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i className="fa-solid fa-arrow-up"></i></button>
+                    <button type="button" className="move-btn" onClick={onMoveDown} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i className="fa-solid fa-arrow-down"></i></button>
+                    <button type="button" className="delete-btn" onClick={onRemove} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i className="fa-solid fa-delete-left"></i></button>
+                </div>
 
                 <section className="product-line">
                     <label htmlFor="one_productLink" className="form-label">Product Link</label>

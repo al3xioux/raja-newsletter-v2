@@ -56,13 +56,10 @@ h1 {
 #main-container {
     display: flex;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto 20px auto;
-    /* centrage horizontal + espace en bas */
     gap: 20px;
-    /* espace entre colonnes */
     align-items: flex-start;
-    /* haut aligné */
 }
 
 /* #corps = la zone de formulaires, prend la place (flex:1) */
@@ -70,20 +67,17 @@ h1 {
     flex: 1;
     min-height: 74vh;
     max-height: 74vh;
-    /* ou 68vh comme vous voulez */
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
     background-color: #EDF1F5;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
-    /* si besoin */
 }
 
 /* #create-button = colonne de droite pour les boutons Add X */
 #create-button {
     width: 200px;
-    /* ou 20% */
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -109,6 +103,20 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.365);
     margin-bottom: 15px;
+    position: relative;
+}
+
+.form-title > div,
+.form-banner > div,
+.form-cta > div,
+.form-product > div,
+.form-legal-notice > div {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
 }
 
 /* Input fields */
@@ -176,8 +184,20 @@ button[type="button"]:hover {
 /* un exemple */
 .form-product {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    width: 100%;
+}
+
+.form-product > div:first-child {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }
 
 .product-line {
@@ -205,8 +225,102 @@ button[type="button"]:hover {
     background-color: #A93226;
 }
 
+.move-btn {
+    background-color: #3498DB;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+    border: none;
+    margin: 5px;
+}
+
+.move-btn:hover {
+    background-color: #2980B9;
+}
+
 .form-label {
     font-size: 16px;
     font-weight: 700;
     text-decoration: underline;
+}
+
+#navigation-card {
+    width: 200px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+    min-height: 74vh;
+    max-height: 74vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+}
+
+#navigation-card h3 {
+    color: #266DF1;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#navigation-items {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+#navigation-items::-webkit-scrollbar {
+    width: 5px;
+}
+
+#navigation-items::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+#navigation-items::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+#navigation-items::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+    background: #f8f9fa;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.nav-item .nav-number {
+    background: #266DF1;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 0.8rem;
+}
+
+.nav-item .nav-type {
+    flex: 1;
 }

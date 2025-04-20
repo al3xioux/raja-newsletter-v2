@@ -27,6 +27,30 @@ export default function NewsletterCreation() {
         }
     };
 
+    // Déplace un formulaire vers le haut
+    const moveFormUp = (formId) => {
+        setRenderedForms((prev) => {
+            const index = prev.findIndex((form) => form.id === formId);
+            if (index <= 0) return prev;
+            
+            const newForms = [...prev];
+            [newForms[index - 1], newForms[index]] = [newForms[index], newForms[index - 1]];
+            return newForms;
+        });
+    };
+
+    // Déplace un formulaire vers le bas
+    const moveFormDown = (formId) => {
+        setRenderedForms((prev) => {
+            const index = prev.findIndex((form) => form.id === formId);
+            if (index === -1 || index === prev.length - 1) return prev;
+            
+            const newForms = [...prev];
+            [newForms[index], newForms[index + 1]] = [newForms[index + 1], newForms[index]];
+            return newForms;
+        });
+    };
+
     // Met à jour la data
     const updateFormData = (formId, newData) => {
         setRenderedForms((prev) =>
@@ -149,25 +173,67 @@ export default function NewsletterCreation() {
 
             {/* LIGNE 2 : #main-container (2 colonnes) */}
             <div id="main-container">
+                <div id="navigation-card">
+                    <h3>Structure de la Newsletter</h3>
+                    <div id="navigation-items">
+                        {renderedForms.map((form, index) => {
+                            const getFormTypeName = (type) => {
+                                switch(type) {
+                                    case "banner": return "Bannière";
+                                    case "title": return "Titre";
+                                    case "oneProduct": return "1 Produit";
+                                    case "product": return "2 Produits";
+                                    case "cta": return "CTA";
+                                    case "legalNotice": return "Mentions Légales";
+                                    default: return type;
+                                }
+                            };
+
+                            return (
+                                <div key={form.id} className="nav-item">
+                                    <span className="nav-number">{index + 1}</span>
+                                    <span className="nav-type">{getFormTypeName(form.type)}</span>
+                                </div>
+                            );
+                        })}
+                        {renderedForms.length === 0 && (
+                            <div style={{ textAlign: 'center', color: '#666', fontSize: '0.9rem', padding: '10px' }}>
+                                Aucun élément ajouté
+                            </div>
+                        )}
+                    </div>
+                </div>
+
                 <div id="corps">
                     {renderedForms.map((form) => {
                         const { id, type, data } = form;
                         const onChange = (d) => updateFormData(id, d);
                         const onRemove = () => removeForm(id);
+                        const onMoveUp = () => moveFormUp(id);
+                        const onMoveDown = () => moveFormDown(id);
+
+                        const formProps = {
+                            key: id,
+                            data,
+                            onChange,
+                            onRemove,
+                            onMoveUp,
+                            onMoveDown
+                        };
 
                         switch (type) {
                             case "title":
-                                return <TitleForm key={id} data={data} onChange={onChange} onRemove={onRemove} />;
+                                return <TitleForm {...formProps} />;
                             case "banner":
-                                return <BannerForm key={id} data={data} onChange={onChange} onRemove={onRemove} />;
+                                return <BannerForm {...formProps} />;
                             case "oneProduct":
-                                return <OneProductForm key={id} data={data} onChange={onChange} onRemove={onRemove} language={language} />;
+                                return <OneProductForm {...formProps} language={language} />;
                             case "product":
-                                return <ProductForm key={id} data={data} onChange={onChange} onRemove={onRemove} language={language} />;
+                                return <ProductForm {...formProps} language={language} />;
                             case "cta":
-                                return <CTAForm key={id} data={data} onChange={onChange} onRemove={onRemove} />;
+                                return <CTAForm {...formProps} />;
                             case "legalNotice":
-                                return <LegalNotice key={id} data={data} onChange={onChange} onRemove={onRemove} />;
+                                return <LegalNotice {...formProps} />;
                             default:
                                 return null;
                         }
