@@ -264,25 +264,25 @@ export default function NewsletterCreation() {
                             width: "100px" 
                         }}
                     >
-                        <option value="fr">France</option>
-                        <option value="uk">Royaume-Uni</option>
-                        <option value="es">Espagne</option>
-                        <option value="de">Allemagne</option>
-                        <option value="at">Autriche</option>
-                        <option value="bfl">Belgique FL</option>
-                        <option value="bfr">Belgique FR</option>
-                        <option value="cde">Suisse DE</option>
-                        <option value="cfr">Suisse FR</option>
-                        <option value="cz">République Tchèque</option>
-                        <option value="dk">Danemark</option>
-                        <option value="hu">Hongrie</option>
-                        <option value="it">Italie</option>
-                        <option value="nl">Pays-Bas</option>
-                        <option value="no">Norvège</option>
-                        <option value="pl">Pologne</option>
-                        <option value="pt">Portugal</option>
-                        <option value="se">Suède</option>
-                        <option value="sk">Slovaquie</option>
+                        <option value="fr">fr</option>
+                        <option value="uk">uk</option>
+                        <option value="es">es</option>
+                        <option value="de">de</option>
+                        <option value="at">at</option>
+                        <option value="bfl">bfl</option>
+                        <option value="bfr">bfr</option>
+                        <option value="cde">cde</option>
+                        <option value="cfr">cfr</option>
+                        <option value="cz">cz</option>
+                        <option value="dk">dk</option>
+                        <option value="hu">hu</option>
+                        <option value="it">it</option>
+                        <option value="nl">nl</option>
+                        <option value="no">no</option>
+                        <option value="pl">pl</option>
+                        <option value="pt">pt</option>
+                        <option value="se">se</option>
+                        <option value="sk">sk</option>
                     </select>
                 )}
             </form>
