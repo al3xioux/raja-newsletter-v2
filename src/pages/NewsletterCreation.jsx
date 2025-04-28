@@ -187,8 +187,8 @@ export default function NewsletterCreation() {
         const header = HEADERS[language] || "";
         const footer = FOOTERS[language] || "";
 
-        // On appelle generateHtml en passant le titre et le headerTexte
-        const html = generateHtml(renderedForms, header, footer, documentTitle, headerTexte);
+        // On appelle generateHtml en passant le titre, le headerTexte et la langue
+        const html = generateHtml(renderedForms, header, footer, documentTitle, headerTexte, language);
 
         // Nom de fichier : si user n'a rien saisi, on met "newsletter".
         const fileName = documentTitle.trim() ? documentTitle.trim() : "newsletter";

@@ -1,6 +1,7 @@
 // src/utils/generateHtml.js
+import { formatPrice } from "./currency";
 
-export default function generateHtml(blocks, header = "", footer = "", docTitle = "Newsletter", headerTexte = "") {
+export default function generateHtml(blocks, header = "", footer = "", docTitle = "Newsletter", headerTexte = "", language = "fr") {
 
 // Début du document
 let htmlContent = `
@@ -199,7 +200,7 @@ blocks.forEach((item) => {
 									<td align="left" style="font-size:14px; color:#FE9600;">
 									<a class="resize_text16" href="${item.data.one_productLink || "#"}" target="_blank" style="color:#FE9600; text-decoration:none;">${item.data.one_fromPrice || ""}<br>
 									<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.one_crossedOutPrice ? `${item.data.one_crossedOutPrice}&nbsp;` : ""}</strike></span>
-										<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.one_price || ""}</span>&nbsp;<br>
+										<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${formatPrice(item.data.one_price, language)}</span>&nbsp;<br>
 										${item.data.one_unit || ""}
 									</a>
 									</td>
@@ -347,7 +348,7 @@ blocks.forEach((item) => {
 																		style="font-size:14px; color:#FE9600; text-decoration:none;">
 																		${item.data.fromPrice1 || ""}<br>
 																		<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice1 ? `${item.data.crossedOutPrice1}&nbsp;` : ""}</strike></span>
-																		<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price1 || ""}</span>&nbsp;<br>
+																		<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${formatPrice(item.data.price1, language)}</span>&nbsp;<br>
 																		${item.data.unit1 || ""}
 																	</a>
 																</td>
@@ -465,7 +466,7 @@ blocks.forEach((item) => {
 																style="font-size:14px; color:#FE9600; text-decoration:none;">
 																${item.data.fromPrice2 || ""}<br>
 																<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;"><strike style="font-size:16px;">${item.data.crossedOutPrice2 ? `${item.data.crossedOutPrice2}&nbsp;` : ""}</strike></span>
-																<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${item.data.price2 || ""}</span>&nbsp;<br>
+																<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">${formatPrice(item.data.price2, language)}</span>&nbsp;<br>
 																${item.data.unit2 || ""}
 															</a>
 														</td>

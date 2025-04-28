@@ -1,5 +1,6 @@
 // src/components/OneProductForm.jsx
 import React, { useEffect, useRef } from "react";
+import { formatPrice } from "../utils/currency";
 
 const fromPriceOptions = {
     fr: "A partir de",
