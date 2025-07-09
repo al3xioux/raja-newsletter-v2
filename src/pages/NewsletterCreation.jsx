@@ -12,21 +12,21 @@ import { HEADERS, FOOTERS } from "../data/var"; // par exemple si vous avez un o
 
 // Wrapper pour résoudre le problème de compatibilité avec React 18
 const StrictModeDroppable = ({ children, ...props }) => {
-  const [enabled, setEnabled] = useState(false);
-  
-  useEffect(() => {
-    const animation = requestAnimationFrame(() => setEnabled(true));
-    return () => {
-      cancelAnimationFrame(animation);
-      setEnabled(false);
-    };
-  }, []);
-  
-  if (!enabled) {
-    return null;
-  }
-  
-  return <Droppable {...props}>{children}</Droppable>;
+    const [enabled, setEnabled] = useState(false);
+
+    useEffect(() => {
+        const animation = requestAnimationFrame(() => setEnabled(true));
+        return () => {
+            cancelAnimationFrame(animation);
+            setEnabled(false);
+        };
+    }, []);
+
+    if (!enabled) {
+        return null;
+    }
+
+    return <Droppable {...props}>{children}</Droppable>;
 };
 
 export default function NewsletterCreation() {
@@ -73,18 +73,18 @@ export default function NewsletterCreation() {
 
     // Fonction pour vérifier si un formulaire est complet
     const checkFormCompletion = (form) => {
-        switch(form.type) {
+        switch (form.type) {
             case "banner":
                 return !!(form.data.bannerImage && form.data.bannerLinkText && form.data.bannerAltTitle);
             case "title":
                 return !!(form.data.bigTitle);
             case "oneProduct":
-                return !!(form.data.one_productLink && form.data.one_image && form.data.one_title && 
-                         form.data.one_text && form.data.one_price);
+                return !!(form.data.one_productLink && form.data.one_image && form.data.one_title &&
+                    form.data.one_text && form.data.one_price);
             case "product":
-                return !!(form.data.productLink1 && form.data.image1 && form.data.title1 && 
-                         form.data.text1 && form.data.price1 && form.data.productLink2 && 
-                         form.data.image2 && form.data.title2 && form.data.text2 && form.data.price2);
+                return !!(form.data.productLink1 && form.data.image1 && form.data.title1 &&
+                    form.data.text1 && form.data.price1 && form.data.productLink2 &&
+                    form.data.image2 && form.data.title2 && form.data.text2 && form.data.price2);
             case "cta":
                 return !!(form.data.ctaImage && form.data.ctaLinkText && form.data.ctaAltTitle);
             case "legalNotice":
@@ -97,10 +97,10 @@ export default function NewsletterCreation() {
     // Mise à jour de l'état de complétion lors de la modification d'un formulaire
     const updateFormData = (formId, newData) => {
         setRenderedForms((prev) => {
-            const newForms = prev.map((item) => 
+            const newForms = prev.map((item) =>
                 item.id === formId ? { ...item, data: newData } : item
             );
-            
+
             // Mettre à jour l'état de complétion
             const updatedForm = newForms.find(form => form.id === formId);
             if (updatedForm) {
@@ -109,7 +109,7 @@ export default function NewsletterCreation() {
                     [formId]: checkFormCompletion(updatedForm)
                 }));
             }
-            
+
             return newForms;
         });
     };
@@ -147,7 +147,7 @@ export default function NewsletterCreation() {
         setRenderedForms((prev) => {
             const index = prev.findIndex((form) => form.id === formId);
             if (index <= 0) return prev;
-            
+
             const newForms = [...prev];
             [newForms[index - 1], newForms[index]] = [newForms[index], newForms[index - 1]];
             return newForms;
@@ -159,7 +159,7 @@ export default function NewsletterCreation() {
         setRenderedForms((prev) => {
             const index = prev.findIndex((form) => form.id === formId);
             if (index === -1 || index === prev.length - 1) return prev;
-            
+
             const newForms = [...prev];
             [newForms[index], newForms[index + 1]] = [newForms[index + 1], newForms[index]];
             return newForms;
@@ -237,19 +237,19 @@ export default function NewsletterCreation() {
                 />
 
                 <label htmlFor="headerTexte">Header Text :</label>
-                    <input
-                        type="text"
-                        id="headerTexte"
-                        value={headerTexte}
-                        onChange={handleHeaderTexteChange}
-                    />
-                
+                <input
+                    type="text"
+                    id="headerTexte"
+                    value={headerTexte}
+                    onChange={handleHeaderTexteChange}
+                />
+
                 <label htmlFor="language">
                     <button
                         type="button"
                         onClick={() => setShowSelect(!showSelect)}
                         className="country-select-button">
-                            <i class="fa-solid fa-flag" style={{color: "white"}}></i>
+                        <i className="fa-solid fa-flag" style={{ color: "white" }}></i>
                     </button>
                 </label>
 
@@ -258,10 +258,10 @@ export default function NewsletterCreation() {
                         id="language"
                         value={language}
                         onChange={handleLanguageChange}
-                        style={{ 
-                            display: "block", 
+                        style={{
+                            display: "block",
                             marginTop: "0",
-                            width: "100px" 
+                            width: "100px"
                         }}
                     >
                         <option value="fr">fr</option>
@@ -301,7 +301,7 @@ export default function NewsletterCreation() {
                                 >
                                     {renderedForms.map((form, index) => {
                                         const getFormTypeName = (type) => {
-                                            switch(type) {
+                                            switch (type) {
                                                 case "banner": return "Banner";
                                                 case "title": return "Title";
                                                 case "oneProduct": return "1 Product";
@@ -316,9 +316,9 @@ export default function NewsletterCreation() {
                                         const completionClass = isCompleted ? 'completed' : 'incomplete';
 
                                         return (
-                                            <Draggable 
-                                                key={form.id} 
-                                                draggableId={form.id.toString()} 
+                                            <Draggable
+                                                key={form.id}
+                                                draggableId={form.id.toString()}
                                                 index={index}
                                             >
                                                 {(provided, snapshot) => (
@@ -326,9 +326,8 @@ export default function NewsletterCreation() {
                                                         ref={provided.innerRef}
                                                         {...provided.draggableProps}
                                                         {...provided.dragHandleProps}
-                                                        className={`nav-item ${snapshot.isDragging ? 'dragging' : ''} ${
-                                                            activeFormId === form.id ? 'active' : ''
-                                                        }`}
+                                                        className={`nav-item ${snapshot.isDragging ? 'dragging' : ''} ${activeFormId === form.id ? 'active' : ''
+                                                            }`}
                                                         onClick={() => scrollToForm(form.id)}
                                                     >
                                                         <span className="nav-number">{index + 1}</span>
@@ -366,7 +365,6 @@ export default function NewsletterCreation() {
                         const onMoveDown = () => moveFormDown(id);
 
                         const formProps = {
-                            key: id,
                             data,
                             onChange,
                             onRemove,
@@ -377,17 +375,17 @@ export default function NewsletterCreation() {
                         const FormComponent = (() => {
                             switch (type) {
                                 case "title":
-                                    return <TitleForm {...formProps} />;
+                                    return <TitleForm key={id} {...formProps} />;
                                 case "banner":
-                                    return <BannerForm {...formProps} />;
+                                    return <BannerForm key={id} {...formProps} />;
                                 case "oneProduct":
-                                    return <OneProductForm {...formProps} language={language} />;
+                                    return <OneProductForm key={id} {...formProps} language={language} />;
                                 case "product":
-                                    return <ProductForm {...formProps} language={language} />;
+                                    return <ProductForm key={id} {...formProps} language={language} />;
                                 case "cta":
-                                    return <CTAForm {...formProps} />;
+                                    return <CTAForm key={id} {...formProps} />;
                                 case "legalNotice":
-                                    return <LegalNotice {...formProps} />;
+                                    return <LegalNotice key={id} {...formProps} />;
                                 default:
                                     return null;
                             }

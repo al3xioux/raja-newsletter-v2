@@ -174,7 +174,7 @@ img { -ms-interpolation-mode: bicubic; border:0; display:block!important; }
 ${header}
 `;
 
-	blocks.forEach((item) => {
+	blocks.forEach((item, index) => {
 		switch (item.type) {
 			case "oneProduct":
 				htmlContent += `
@@ -253,11 +253,18 @@ ${header}
 							</td>
 						</tr>
 						<tr><td style="display:block; font-size:0; height:15px;">&nbsp;</td></tr>
+						`;
+				// Ajout des 3 lignes de séparation sauf si le bloc précédent est un CTA
+				if (!(blocks[index + 1] && blocks[index + 1].type === "cta")) {
+					htmlContent += `
 						<tr><td style="display:block; font-size:0; height:15px; background-color:#FFFFFF;">&nbsp;</td></tr>
 						<tr><td style="display:block; font-size:0; background-color:#EDF1F7; height:2px;">&nbsp;</td></tr>
 						<tr><td style="display:block; font-size:0; height:15px; background-color:#FFFFFF;">&nbsp;</td></tr>
-					</table>
-					<!--END 07 BIG PDT - div-->
+				`;
+				}
+				htmlContent += `
+					</table >
+					<!--L1-div-->
 					`;
 				break;
 
@@ -329,15 +336,14 @@ ${header}
 															</table>
 														</td>
 													</tr>
-													<tr><td class="resize_h30" style="font-size:0; display:block; height:10px;">&nbsp;</td></tr>
 												</table>
 											</td>
 										</tr>
 									</table>
 								</div>
 								<!--[if (gte mso 9)|(IE)]>
-										</td>
-										<td width="50%" dir="ltr">
+									</td>
+									<td width="50%" dir="ltr">
 								<![endif]-->
 								<div class="resize" dir="ltr" style="width:50%; display:inline-block; vertical-align:top; text-align: center;">
 									<table class="resize_w90 resize_sep_borderTop" width="270" border="0" align="center" valign="top" cellpadding="0" cellspacing="0">
@@ -384,7 +390,7 @@ ${header}
 															<a class="resize_text16" href="${item.data.productLink2 || "#"}" target="_blank" style="font-size:14px; color:#FE9600; text-decoration:none;">
 																${item.data.fromPrice2 || ""}<br>
 																<span class="resize_text30" style="font-size:20px; font-weight:800; color:#FE9600; text-decoration:none;">
-																	${item.data.crossedOutPrice2 ? `<strike style="font-size:16px;">&nbsp;${item.data.crossedOutPrice2}&nbsp;</strike>&nbsp;` : ""}${formatPrice(item.data.price2, language)}
+																	${item.data.crossedOutPrice2 ? `<strike style=\"font-size:16px;\">&nbsp;${item.data.crossedOutPrice2}&nbsp;</strike>&nbsp;` : ""}${formatPrice(item.data.price2, language)}
 																</span>&nbsp;<br>
 																${item.data.unit2 || ""}
 															</a>
@@ -397,15 +403,22 @@ ${header}
 									</table>
 								</div>
 								<!--[if (gte mso 9)|(IE)]>
-										</td>
-									</tr>
-								</table>
-								<![endif]-->
-							</td>
-						</tr>
+									</td>
+								</tr>
+							</table>
+							<![endif]-->
+						</td>
+					</tr>
+`;
+				// Ajout des 3 lignes de séparation sauf si le bloc précédent est un CTA
+				if (!(blocks[index + 1] && blocks[index + 1].type === "cta")) {
+					htmlContent += `
 						<tr><td style="display:block; font-size:0; height:15px; background-color:#FFFFFF;">&nbsp;</td></tr>
 						<tr><td style="display:block; font-size:0; background-color:#EDF1F7; height:2px;">&nbsp;</td></tr>
 						<tr><td style="display:block; font-size:0; height:15px; background-color:#FFFFFF;">&nbsp;</td></tr>
+					`;
+				}
+				htmlContent += `
 					</table>
 					<!--L1-div-->
 					`;
