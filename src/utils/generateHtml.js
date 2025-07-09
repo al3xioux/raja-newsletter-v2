@@ -3,6 +3,12 @@ import { formatPrice } from "./currency";
 
 export default function generateHtml(blocks, header = "", footer = "", docTitle = "Newsletter", headerTexte = "", language = "fr") {
 
+	// Fonction utilitaire pour ajouter -MOB avant .png
+	function getMobileImageUrl(url) {
+		if (typeof url !== "string") return url;
+		return url.replace(/(\.png)$/i, "-MOB$1");
+	}
+
 	// Début du document
 	let htmlContent = `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -453,7 +459,7 @@ ${header}
 						<td class="none" style="font-size:0; display:block; width:600px;"><a href="${item.data.bannerLinkText || "#"}" target="_blank" title="${item.data.bannerAltTitle || ""}"><img src="${item.data.bannerImage || ""}" width="600" height="180" style="display:block; padding:0; margin:0; border:0; width:600px; height:180px;" alt="${item.data.bannerAltTitle || ""}"/></a></td>
 					</tr>
 					<tr>
-						<td class="view" style="display:none; font-size:0;"><a href="${item.data.bannerLinkText || "#"}" target="_blank" title="${item.data.bannerAltTitle || ""}"><img class="resize" src="${item.data.bannerImage || ""}" width="600" height="400" style="display:block; padding:0; margin:0; border:0; width:600px; height:400px;" alt="${item.data.bannerAltTitle || ""}"/></a></td>
+						<td class="view" style="display:none; font-size:0;"><a href="${item.data.bannerLinkText || "#"}" target="_blank" title="${item.data.bannerAltTitle || ""}"><img class="resize" src="${getMobileImageUrl(item.data.bannerImage) || ""}" width="600" height="400" style="display:block; padding:0; margin:0; border:0; width:600px; height:400px;" alt="${item.data.bannerAltTitle || ""}"/></a></td>
 					</tr>
 				</table>
 				<!--END TOP BAN-->
