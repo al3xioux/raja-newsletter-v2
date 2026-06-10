@@ -20,13 +20,13 @@ export default function LegalNotice({ data, onChange, onRemove, onMoveUp, onMove
 
             <div className="form-card-body">
                 <div className="field-group">
-                    <label htmlFor="legal-notice" className="form-label">Texte légal</label>
+                    <label htmlFor="legal-notice" className="form-label">Legal text</label>
                     <textarea
                         id="legal-notice"
                         value={data.legalNotice || ""}
                         onChange={(e) => onChange({ ...data, legalNotice: e.target.value })}
                         rows="6"
-                        placeholder="Mentions légales, CGV…"
+                        placeholder="Legal notice, T&Cs…"
                     />
                 </div>
             </div>

@@ -31,7 +31,7 @@ export default function CTAForm({ data, onChange, onRemove, onMoveUp, onMoveDown
                 </div>
 
                 <div className="field-group">
-                    <label htmlFor="cta-link" className="form-label">Lien</label>
+                    <label htmlFor="cta-link" className="form-label">Link</label>
                     <input
                         type="text"
                         id="cta-link"
@@ -48,7 +48,7 @@ export default function CTAForm({ data, onChange, onRemove, onMoveUp, onMoveDown
                         id="cta-alt"
                         value={data.ctaAltTitle || ""}
                         onChange={(e) => onChange({ ...data, ctaAltTitle: e.target.value })}
-                        placeholder="Description de l'image…"
+                        placeholder="Image description…"
                     />
                 </div>
             </div>

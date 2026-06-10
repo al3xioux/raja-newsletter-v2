@@ -20,18 +20,18 @@ export default function TitleForm({ data, onChange, onRemove, onMoveUp, onMoveDo
 
             <div className="form-card-body">
                 <div className="field-group">
-                    <label className="form-label" htmlFor="bigTitle">Titre</label>
+                    <label className="form-label" htmlFor="bigTitle">Title</label>
                     <input
                         type="text"
                         id="bigTitle"
                         value={data.bigTitle || ""}
                         onChange={(e) => onChange({ ...data, bigTitle: e.target.value })}
-                        placeholder="Texte du titre…"
+                        placeholder="Title text…"
                     />
                 </div>
 
                 <div className="field-group">
-                    <label className="form-label" htmlFor="textsize">Taille du texte</label>
+                    <label className="form-label" htmlFor="textsize">Font size</label>
                     <select
                         id="textsize"
                         value={data.textSize || "22px"}
@@ -43,7 +43,7 @@ export default function TitleForm({ data, onChange, onRemove, onMoveUp, onMoveDo
                 </div>
 
                 <div className="field-group">
-                    <label className="form-label" htmlFor="textcolor">Couleur du texte</label>
+                    <label className="form-label" htmlFor="textcolor">Text color</label>
                     <input
                         type="color"
                         id="textcolor"

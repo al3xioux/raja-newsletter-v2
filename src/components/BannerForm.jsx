@@ -31,7 +31,7 @@ export default function BannerForm({ data, onChange, onRemove, onMoveUp, onMoveD
                 </div>
 
                 <div className="field-group">
-                    <label htmlFor="banner-link" className="form-label">Lien</label>
+                    <label htmlFor="banner-link" className="form-label">Link</label>
                     <input
                         type="text"
                         id="banner-link"
@@ -48,7 +48,7 @@ export default function BannerForm({ data, onChange, onRemove, onMoveUp, onMoveD
                         id="banner-alt"
                         value={data.bannerAltTitle || ""}
                         onChange={(e) => onChange({ ...data, bannerAltTitle: e.target.value })}
-                        placeholder="Description de l'image…"
+                        placeholder="Image description…"
                     />
                 </div>
             </div>

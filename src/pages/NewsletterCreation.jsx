@@ -119,7 +119,7 @@ export default function NewsletterCreation() {
     };
 
     const removeForm = (formId) => {
-        if (window.confirm("Êtes-vous sûr de vouloir supprimer ce bloc ?")) {
+        if (window.confirm("Are you sure you want to delete this block?")) {
             setRenderedForms((prev) => prev.filter((x) => x.id !== formId));
             setCompletedForms((prev) => {
                 const next = { ...prev };
@@ -171,7 +171,7 @@ export default function NewsletterCreation() {
     };
 
     const handleReset = () => {
-        if (window.confirm("Réinitialiser tous les blocs ?")) {
+        if (window.confirm("Reset all blocks?")) {
             setRenderedForms([]);
             setLanguage("fr");
             setDocumentTitle("");
@@ -207,7 +207,7 @@ export default function NewsletterCreation() {
                             id="documentTitle"
                             value={documentTitle}
                             onChange={handleDocumentTitleChange}
-                            placeholder="Objet de la newsletter…"
+                            placeholder="Newsletter subject…"
                         />
                     </div>
 
@@ -218,7 +218,7 @@ export default function NewsletterCreation() {
                             id="headerTexte"
                             value={headerTexte}
                             onChange={handleHeaderTexteChange}
-                            placeholder="Texte du header…"
+                            placeholder="Header text…"
                         />
                     </div>
 
@@ -298,7 +298,7 @@ export default function NewsletterCreation() {
                                         {renderedForms.length === 0 && (
                                             <div className="nav-empty">
                                                 <i className="fa-solid fa-layer-group"></i>
-                                                <div>Ajoutez des blocs<br />pour commencer</div>
+                                                <div>Add blocks<br />to get started</div>
                                             </div>
                                         )}
                                     </div>
@@ -312,7 +312,7 @@ export default function NewsletterCreation() {
                         {renderedForms.length === 0 && (
                             <div className="corps-empty">
                                 <i className="fa-solid fa-envelope-open corps-empty-icon"></i>
-                                <div>Commencez par ajouter un bloc<br />depuis le panneau de droite.</div>
+                                <div>Start by adding a block<br />from the right panel.</div>
                             </div>
                         )}
                         {renderedForms.map((form) => {
@@ -346,7 +346,7 @@ export default function NewsletterCreation() {
 
                     {/* Panneau ajout de blocs */}
                     <div id="create-button">
-                        <div className="add-panel-label">Ajouter un bloc</div>
+                        <div className="add-panel-label">Add a block</div>
                         <button type="button" className="add-btn" onClick={() => addForm("banner")}>
                             <i className="fa-solid fa-image"></i> Banner
                         </button>
