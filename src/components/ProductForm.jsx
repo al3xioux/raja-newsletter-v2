@@ -101,10 +101,13 @@ export default function ProductForm({ data, onChange, onRemove, onMoveUp, onMove
     return (
         <section className="product-group">
             <form className="form-product">
-                <div>
-                    <button type="button" className="move-btn" onClick={onMoveUp} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i className="fa-solid fa-arrow-up"></i></button>
-                    <button type="button" className="move-btn" onClick={onMoveDown} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i className="fa-solid fa-arrow-down"></i></button>
-                    <button type="button" className="delete-btn" onClick={onRemove} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i className="fa-solid fa-delete-left"></i></button>
+                <div className="form-card-header">
+                    <span className="form-card-title">Products</span>
+                    <div className="form-card-actions">
+                        <button type="button" className="move-btn" onClick={onMoveUp}><i className="fa-solid fa-arrow-up"></i></button>
+                        <button type="button" className="move-btn" onClick={onMoveDown}><i className="fa-solid fa-arrow-down"></i></button>
+                        <button type="button" className="delete-btn" onClick={onRemove}><i className="fa-solid fa-trash"></i></button>
+                    </div>
                 </div>
 
                 <div className="product-columns-container">
