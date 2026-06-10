@@ -9,6 +9,17 @@ export default function generateHtml(blocks, header = "", footer = "", docTitle 
 		return url.replace(/(\.png)$/i, "-MOB$1");
 	}
 
+	// Champs label / eco-label : l'utilisateur peut coller soit une simple URL,
+	// soit une balise <img> complète (copiée depuis les pages "labels").
+	// Si c'est une balise <img> complète, on l'injecte telle quelle pour
+	// générer un HTML valide ; sinon on construit la balise à partir de l'URL.
+	function renderLabelImg(value, { className, height, width, alt }) {
+		const v = (value || "").trim();
+		if (/<img\b/i.test(v)) return v;
+		const src = v || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank-1000x152.png";
+		return `<img class="${className}" src="${src}" height="${height}" width="${width}" alt="${alt}" style="display:block; padding:0; margin:0; border:0; height:${height}px; width:${width}px;">`;
+	}
+
 	// Début du document
 	let htmlContent = `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -220,7 +231,7 @@ ${header}
 												<table class="resize_w90" width="268" border="0" align="center" valign="top" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF;">
 													<!--CRIT GREEN-->
 													<tr>
-														<td><a href="${item.data.one_productLink || "#"}" target="_blank"><img class="resize_h40" src="${item.data.one_ecolabel || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank-1000x152.png"}" height="30" width="197" alt="Eco Label" style="display:block; padding:0; margin:0; border:0; height:30px; width:197px;"></a></td>
+														<td><a href="${item.data.one_productLink || "#"}" target="_blank">${renderLabelImg(item.data.one_ecolabel, { className: "resize_h40", height: 30, width: 197, alt: "Eco Label" })}</a></td>
 													</tr>
 													<tr><td style="font-size:0; display:block; height:5px;">&nbsp;</td></tr>
 													<!--END CRIT GREEN-->
@@ -235,7 +246,7 @@ ${header}
 													<tr><td style="font-size:0; display:block; height:20px;">&nbsp;</td></tr>
 													<!--LABEL-->
 													<tr>
-														<td align="left" style="font-size:0; display:block;"><a href="${item.data.one_productLink || "#"}" target="_blank"><img class="resize" src="${item.data.one_label || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank-1000x152.png"}" height="26" width="268" alt="Label" style="display:block; padding:0; margin:0; border:0; height:26px; width:268px;"></a></td>
+														<td align="left" style="font-size:0; display:block;"><a href="${item.data.one_productLink || "#"}" target="_blank">${renderLabelImg(item.data.one_label, { className: "resize", height: 26, width: 268, alt: "Label" })}</a></td>
 													</tr>
 													<!--END LABEL-->
 													<tr><td style="font-size:0; display:block; height:10px;">&nbsp;</td></tr>
@@ -302,7 +313,7 @@ ${header}
 																<tr><td style="font-size:0; display:block; height:10px;">&nbsp;</td></tr>
 																<!--CRIT GREEN : supprimer le 1er TR et transfo du 2eme à 35px si critère opposé et ajout de la classe "none" sur le TR / zone encadrée à supprimer si pas de critère-->
 																<tr>
-																	<td style="font-size:0; display:block;"><a href="${item.data.productLink1 || "#"}" target="_blank"><img class="resize_h40" src="${item.data.ecolabel1 || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank-1000x152.png"}" height="30" width="197" alt="Eco Label" style="display:block; padding:0; margin:0; border:0; height:30px; width:197px;"></a></td>
+																	<td style="font-size:0; display:block;"><a href="${item.data.productLink1 || "#"}" target="_blank">${renderLabelImg(item.data.ecolabel1, { className: "resize_h40", height: 30, width: 197, alt: "Eco Label" })}</a></td>
 																</tr>
 																<tr><td style="font-size:0; display:block; height:5px;">&nbsp;</td></tr>
 																<!--END CRIT GREEN-->
@@ -324,7 +335,7 @@ ${header}
 																<tr><td style="font-size:0; display:block; height:10px;">&nbsp;</td></tr>
 																<!--LABEL : supprimer le 1er TR et transfo du 2eme à 30px si critère opposé et ajout de la classe "none" sur le TR / zone encadrée à supprimer si pas de label-->
 																<tr>
-																	<td align="left" style="font-size:0; display:block;"><a href="${item.data.productLink1 || "#"}" target="_blank"><img class="resize" src="${item.data.label1 || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank-1000x152.png"}" height="26" width="268" alt="Label" style="display:block; padding:0; margin:0; border:0; height:26px; width:268px;"></a></td>
+																	<td align="left" style="font-size:0; display:block;"><a href="${item.data.productLink1 || "#"}" target="_blank">${renderLabelImg(item.data.label1, { className: "resize", height: 26, width: 268, alt: "Label" })}</a></td>
 																</tr>
 																<tr><td style="font-size:0; display:block; height:4px;">&nbsp;</td></tr>
 																<!--END LABEL-->
@@ -367,7 +378,7 @@ ${header}
 													<tr><td style="font-size:0; display:block; height:10px;">&nbsp;</td></tr>
 													<!--CRIT GREEN : supprimer le 1er TR et transfo du 2eme à 35px si critère opposé et ajout de la classe "none" sur le TR / zone encadrée à supprimer si pas de critère-->
 													<tr>
-														<td style="font-size:0; display:block;"><a href="${item.data.productLink2 || "#"}" target="_blank"><img class="resize_h40" src="${item.data.ecolabel2 || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank-1000x152.png"}" height="30" width="197" alt="Eco Label" style="display:block; padding:0; margin:0; border:0; height:30px; width:197px;"></a></td>
+														<td style="font-size:0; display:block;"><a href="${item.data.productLink2 || "#"}" target="_blank">${renderLabelImg(item.data.ecolabel2, { className: "resize_h40", height: 30, width: 197, alt: "Eco Label" })}</a></td>
 													</tr>
 													<tr><td style="font-size:0; display:block; height:5px;">&nbsp;</td></tr>
 													<!--END CRIT GREEN-->
@@ -389,7 +400,7 @@ ${header}
 													<tr><td style="font-size:0; display:block; height:10px;">&nbsp;</td></tr>
 													<!--LABEL : supprimer le 1er TR et transfo du 2eme à 30px si critère opposé et ajout de la classe "none" sur le TR / zone encadrée à supprimer si pas de label-->
 													<tr>
-														<td align="left" style="font-size:0; display:block;"><a href="${item.data.productLink2 || "#"}" target="_blank"><img class="resize" src="${item.data.label2 || "https://imgnews.raja-group.com/00-structure/label/ALL-label-blank-1000x152.png"}" height="26" width="268" alt="Label" style="display:block; padding:0; margin:0; border:0; height:26px; width:268px;"></a></td>
+														<td align="left" style="font-size:0; display:block;"><a href="${item.data.productLink2 || "#"}" target="_blank">${renderLabelImg(item.data.label2, { className: "resize", height: 26, width: 268, alt: "Label" })}</a></td>
 													</tr>
 													<tr><td style="font-size:0; display:block; height:4px;">&nbsp;</td></tr>
 													<!--END LABEL-->

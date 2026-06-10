@@ -60,14 +60,18 @@ export default function OneProductForm({ data, onChange, onRemove, onMoveUp, onM
         onChange({ ...data, [field]: e.target.value });
     };
 
-    // Check if the ecolabel URL is valid (starts with http)
-    const hasEcoLabelPreview =
-        data.one_ecolabel &&
-        (data.one_ecolabel.startsWith("http://") || data.one_ecolabel.startsWith("https://"));
+    // Renvoie l'URL de l'image à prévisualiser, que la saisie soit une simple
+    // URL ou une balise <img> complète collée depuis les pages "labels".
+    const getLabelPreviewSrc = (value) => {
+        if (!value) return "";
+        const v = value.trim();
+        if (v.startsWith("http://") || v.startsWith("https://")) return v;
+        const match = v.match(/<img[^>]*\ssrc=["']([^"']+)["']/i);
+        return match ? match[1] : "";
+    };
 
-    const hasLabelPreview =
-        data.one_label &&
-        (data.one_label.startsWith("http://") || data.one_label.startsWith("https://"));
+    const ecoLabelPreviewSrc = getLabelPreviewSrc(data.one_ecolabel);
+    const labelPreviewSrc = getLabelPreviewSrc(data.one_label);
 
 
     return (
@@ -120,9 +124,9 @@ export default function OneProductForm({ data, onChange, onRemove, onMoveUp, onM
                             style={{ flex: 1 }}
                         />
                     </div>
-                    {hasEcoLabelPreview && (
+                    {ecoLabelPreviewSrc && (
                         <img
-                            src={data.one_ecolabel}
+                            src={ecoLabelPreviewSrc}
                             alt="Eco-label preview"
                             style={{ maxWidth: "200px", margin: "8px 0" }}
                         />
@@ -169,9 +173,9 @@ export default function OneProductForm({ data, onChange, onRemove, onMoveUp, onM
                             style={{ flex: 1 }}
                         />
                     </div>
-                    {hasLabelPreview && (
+                    {labelPreviewSrc && (
                         <img
-                            src={data.one_label}
+                            src={labelPreviewSrc}
                             alt="Label preview"
                             style={{ maxWidth: "200px", margin: "8px 0" }}
                         />

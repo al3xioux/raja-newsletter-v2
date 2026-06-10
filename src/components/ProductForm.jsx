@@ -82,21 +82,20 @@ export default function ProductForm({ data, onChange, onRemove, onMoveUp, onMove
         }
     };
 
-    const hasEcoLabel1Preview =
-        data.ecolabel1 &&
-        (data.ecolabel1.startsWith("http://") || data.ecolabel1.startsWith("https://"));
+    // Renvoie l'URL de l'image à prévisualiser, que la saisie soit une simple
+    // URL ou une balise <img> complète collée depuis les pages "labels".
+    const getLabelPreviewSrc = (value) => {
+        if (!value) return "";
+        const v = value.trim();
+        if (v.startsWith("http://") || v.startsWith("https://")) return v;
+        const match = v.match(/<img[^>]*\ssrc=["']([^"']+)["']/i);
+        return match ? match[1] : "";
+    };
 
-    const hasLabel1Preview =
-        data.label1 &&
-        (data.label1.startsWith("http://") || data.label1.startsWith("https://"));
-
-    const hasEcoLabel2Preview =
-        data.ecolabel2 &&
-        (data.ecolabel2.startsWith("http://") || data.ecolabel2.startsWith("https://"));
-
-    const hasLabel2Preview =
-        data.label2 &&
-        (data.label2.startsWith("http://") || data.label2.startsWith("https://"));
+    const ecoLabel1PreviewSrc = getLabelPreviewSrc(data.ecolabel1);
+    const label1PreviewSrc = getLabelPreviewSrc(data.label1);
+    const ecoLabel2PreviewSrc = getLabelPreviewSrc(data.ecolabel2);
+    const label2PreviewSrc = getLabelPreviewSrc(data.label2);
 
     return (
         <section className="product-group">
@@ -146,9 +145,9 @@ export default function ProductForm({ data, onChange, onRemove, onMoveUp, onMove
                                 style={{ flex: 1 }}
                             />
                         </div>
-                        {hasEcoLabel1Preview && (
+                        {ecoLabel1PreviewSrc && (
                             <img
-                                src={data.ecolabel1}
+                                src={ecoLabel1PreviewSrc}
                                 alt="Eco-label preview"
                                 style={{ maxWidth: "200px", margin: "8px 0" }}
                             />
@@ -192,9 +191,9 @@ export default function ProductForm({ data, onChange, onRemove, onMoveUp, onMove
                                 style={{ flex: 1 }}
                             />
                         </div>
-                        {hasLabel1Preview && (
+                        {label1PreviewSrc && (
                             <img
-                                src={data.label1}
+                                src={label1PreviewSrc}
                                 alt="Label preview"
                                 style={{ maxWidth: "200px", margin: "8px 0" }}
                             />
@@ -277,9 +276,9 @@ export default function ProductForm({ data, onChange, onRemove, onMoveUp, onMove
                                 style={{ flex: 1 }}
                             />
                         </div>
-                        {hasEcoLabel2Preview && (
+                        {ecoLabel2PreviewSrc && (
                             <img
-                                src={data.ecolabel2}
+                                src={ecoLabel2PreviewSrc}
                                 alt="Eco-label preview"
                                 style={{ maxWidth: "200px", margin: "8px 0" }}
                             />
@@ -323,9 +322,9 @@ export default function ProductForm({ data, onChange, onRemove, onMoveUp, onMove
                                 style={{ flex: 1 }}
                             />
                         </div>
-                        {hasLabel2Preview && (
+                        {label2PreviewSrc && (
                             <img
-                                src={data.label2}
+                                src={label2PreviewSrc}
                                 alt="Label preview"
                                 style={{ maxWidth: "200px", margin: "8px 0" }}
                             />
